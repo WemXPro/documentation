@@ -9,12 +9,12 @@ dateCreated: 2023-02-16T07:45:54.688Z
 ---
 
 # Modules
-> This documentation is still Work in Proggress and thus incomplete. For more accurate examples, please look at already published modules.
+> This documentation is still Work in Progress and thus incomplete. For more accurate examples, please look at already published modules.
 {.is-danger}
 
 ## Introduction
 
-WemX comes with an advanced modular system. Modules allow you to extend capabilities of your WemX Panel, modules are essentially a mini laravel applications with routes, providers, models, controllers, views and more. External developers can create Modules which can be downloaded by the community on our official marketplace: https://market.wemx.net
+WemX comes with an advanced modular system. Modules allow you to extend capabilities of your WemX Panel, modules are essentially a mini Laravel applications with routes, providers, models, controllers, views and more. External developers can create Modules which can be downloaded by the community on our official marketplace: https://market.wemx.net
 
 ## Creating a new Module
 
@@ -84,4 +84,4 @@ return [
 ```
 
 Elements allow you to dynamically add nav items & elements to the dashboard. 
-You can add navigation menu directly through the config aswell as modify them. You may add as many navigation routes as you wish.
+You can add navigation menu directly through the config as well as modify them. You may add as many navigation routes as you wish.
