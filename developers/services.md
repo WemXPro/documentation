@@ -28,11 +28,12 @@ You can find a bare-bone example of a service here: https://github.com/WemXPro/s
 
 WemX comes with a convenient command to create a custom service
 
+In your WemX folder, run:
 ```shell
 # Replace example with your name, replace spaces with underscore i.e "Direct Admin" is "direct_admin"
 php artisan service:make Example
 ```
-This command generates a new service with your name in `/var/www/wemx/app/Services/<service-name>`
+This command generates a new service with your name in `app/Services/<service-name>`
 
 Each Service has a file called Service.php in its root directory. Here you can find an example of this file: https://github.com/WemXPro/service-example/blob/main/Service.php 
 
@@ -59,7 +60,7 @@ Inside Service.php you have the following method:
     }
 ```
 
-The meta data references information regarding the service. Such as its display name, author and version. wemx_version specifies the wemx version this service supports.
+The meta data references information regarding the service. Such as its display name, author, version and wemx_version, where wemx_version specifies the wemx version this service supports.
 
 ## Config
 
@@ -82,7 +83,7 @@ Your service might require data that has to be set by the administrator such as 
 
 Here are some examples of how you can create config values for your Service. The key should be unique to your service.
 
-For the key, you should use the lower name of your service, followed by the key i.e example::hostname
+For the key field, you should use the lower name of your service, followed by the key i.e example::hostname where example is the same of the service, and hostname is the key
 
 ```php
     /**
@@ -115,7 +116,7 @@ For the key, you should use the lower name of your service, followed by the key 
     }
 ```
 
-In case you want to store passwords, API keys or other sensitive data, you can add "encrypted" before the key so encrypted::example::hostname 
+In case you want to store passwords, API keys or other sensitive data, you can add "encrypted" before the key i.e. encrypted::example::hostname where example is the same of the service, and hostname is the key
 
 This will encrypt the data entered by users in the form, and store it in the database as encrypted. At retrieval, the data is decrypted.
 
@@ -138,7 +139,7 @@ Settings::get('example::hostname', '127.0,0,1');
 # Check if a key exists
 Settings::has('example::hostname');
 
-# Progmatically store a key value
+# Programmatically store a key value
 Settings::put('encrypted::example::password', 'SuperSecure');
 
 # Delete a key
@@ -147,11 +148,11 @@ Settings::forget('example::hostname');
 
 ## Package Config
 
-The package config allows you to define the fields required for the service. It can also be used to set optional params. It uses the same structure as the config above but for key, rather than making it unique per setting, you can make it unique per package.
+The package config allows you to define the fields required for the service. It can also be used to set optional params. It uses the same structure as the config above but for key, rather than making it unique per service, you make it unique per package.
 
 ```php
     /**
-     * Define the default package configuration values required when creatig
+     * Define the default package configuration values required when creating
      * new packages. i.e maximum ram usage, allowed databases and backups etc.
      *
      * Laravel validation rules: https://laravel.com/docs/10.x/validation
