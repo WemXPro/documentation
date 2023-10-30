@@ -2,7 +2,7 @@
 title: Packages
 description: Learn how to properly setup packages
 published: true
-date: 2023-10-01T16:06:02.744Z
+date: 2023-10-30T15:25:35.139Z
 tags: 
 editor: markdown
 dateCreated: 2023-09-30T17:14:56.199Z
@@ -63,15 +63,13 @@ Set the method to POST, in URL enter your discord webhook URL inside data add:
 }
 ```
 
-![Create webhook](/assets/webhook/create.png)
-
+![Create Webhook](/assets/webhook/create.png)
 Leave headers empty.
 
 Now when a user places an order, a noticiation will be sent to Discord:
-![Webhook received](/assets/webhook/received.png)
+![Webhook Received](/assets/webhook/received.png)
 
 You can use custom variables in webhooks identified by the `$order` operator. The $order operator has access to the user, package, payments and more.
-
 
 Available variables:
 ```php

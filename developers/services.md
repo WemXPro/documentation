@@ -28,11 +28,12 @@ You can find a bare-bone example of a service here: https://github.com/WemXPro/s
 
 WemX comes with a convenient command to create a custom service
 
+In your WemX folder, run:
 ```shell
 # Replace example with your name, replace spaces with underscore i.e "Direct Admin" is "direct_admin"
 php artisan service:make Example
 ```
-This command generates a new service with your name in `/var/www/wemx/app/Services/<service-name>`
+This command generates a new service with your name in `app/Services/<service-name>`
 
 Each Service has a file called Service.php in its root directory. Here you can find an example of this file: https://github.com/WemXPro/service-example/blob/main/Service.php 
 
@@ -59,7 +60,7 @@ Inside Service.php you have the following method:
     }
 ```
 
-The meta data references information regarding the service. Such as its display name, author and version. wemx_version specifies the wemx version this service supports.
+The meta data references information regarding the service. Such as its display name, author, version and wemx_version, where wemx_version specifies the wemx version this service supports.
 
 ## Config
 
@@ -82,7 +83,7 @@ Your service might require data that has to be set by the administrator such as 
 
 Here are some examples of how you can create config values for your Service. The key should be unique to your service.
 
-For the key, you should use the lower name of your service, followed by the key i.e example::hostname
+For the key field, you should use the lower name of your service, followed by the key i.e example::hostname where example is the same of the service, and hostname is the key
 
 ```php
     /**
@@ -97,7 +98,7 @@ For the key, you should use the lower name of your service, followed by the key 
     {
         return [
             [
-            		"key" => "example::username",
+                "key" => "example::username",
                 "name" => "Panel Username",
                 "description" => "Username of an administrator on Example Panel",
                 "type" => "text",
@@ -105,7 +106,7 @@ For the key, you should use the lower name of your service, followed by the key 
                 "rules" => ['required'], // laravel validation rules
             ],
             [
-            		"key" => "encrypted::example::password",
+                "key" => "encrypted::example::password",
                 "name" => "example Password",
                 "description" => "Password of an administrator on Example Panel",
                 "type" => "password",
@@ -115,7 +116,7 @@ For the key, you should use the lower name of your service, followed by the key 
     }
 ```
 
-In case you want to store passwords, api keys or other sensitive data, you can add "encrypted" before the key so encrypted::example::hostname 
+In case you want to store passwords, API keys or other sensitive data, you can add "encrypted" before the key i.e. encrypted::example::hostname where example is the same of the service, and hostname is the key
 
 This will encrypt the data entered by users in the form, and store it in the database as encrypted. At retrieval, the data is decrypted.
 
@@ -138,7 +139,7 @@ Settings::get('example::hostname', '127.0,0,1');
 # Check if a key exists
 Settings::has('example::hostname');
 
-# Progmatically store a key value
+# Programmatically store a key value
 Settings::put('encrypted::example::password', 'SuperSecure');
 
 # Delete a key
@@ -147,7 +148,49 @@ Settings::forget('example::hostname');
 
 ## Package Config
 
-The package config allows you to define the fields required for the service. It can also be used to set optional params. It uses the same structure as the config above but for key, rather than making it unique per setting, you can make it unique per package.
+The package config allows you to define the fields required for the service. It can also be used to set optional params. It uses the same structure as the config above but for key, rather than making it unique per service, you make it unique per package.
+
+```php
+    /**
+     * Define the default package configuration values required when creating
+     * new packages. i.e maximum ram usage, allowed databases and backups etc.
+     *
+     * Laravel validation rules: https://laravel.com/docs/10.x/validation
+     *
+     * @return array
+     */
+    public static function setPackageConfig(Package $package): array
+    {
+        return 
+        [
+            [
+                "key" => "memory",
+                "name" => "Memory in MB",
+                "description" => "Allowed memory in MB",
+                "type" => "number",
+                "default_value" => 1024, # (optional)
+                "rules" => ['required'],
+            ],
+            [
+                "key" => "disk_space",
+                "name" => "Disk Space in MB",
+                "description" => "Allowed disk space in MB",
+                "type" => "number",
+                "default_value" => 20000, # (optional)
+                "rules" => ['required'],
+            ]
+        ];
+    }
+```
+
+You can retrieve package settings using
+```php
+$package->data('disk_space');
+```
+
+## Checkout Config
+
+The checkout config are the form fields displayed to the buyer at checkout. It uses the same structure as the configs above.
 
 ```php
     /**
@@ -162,63 +205,21 @@ The package config allows you to define the fields required for the service. It 
     {
         return 
         [
-         	[
-         		"key" => "memory",
-            "name" => "Memory in MB",
-            "description" => "Allowed memory in MB",
-            "type" => "number",
-            "default_value" => 1024, # (optional)
-            "rules" => ['required'],
-          ],
-          [
-         		"key" => "disk_space",
-            "name" => "Disk Space in MB",
-            "description" => "Allowed disk space in MB",
-            "type" => "number",
-            "default_value" => 20000, # (optional)
-            "rules" => ['required'],
-          ]
+            [
+                "key" => "location",
+                "name" => "Server Location ",
+                "description" => "Where do you want us to deploy your server?",
+                "type" => "select",
+                "options" => [
+                  "US" => "United States",
+                  "CA" => "Canada",
+                  "DE" => "Germany",
+                ],
+                "default_value" => "CA",
+                "rules" => ['required'],
+            ],
+            // add more input fields
         ];
-    }
-```
-
-You can retrieve package settings using
-```php
-$package->data('disk_space');
-```
-
-## Checkout Config
-
-The checkout config are the form fields dislayed to the buyer at checkout. It uses the same structure as the configs above.
-
-```php
-    /**
-     * Define the default package configuration values required when creatig
-     * new packages. i.e maximum ram usage, allowed databases and backups etc.
-     *
-     * Laravel validation rules: https://laravel.com/docs/10.x/validation
-     *
-     * @return array
-     */
-    public static function setPackageConfig(Package $package): array
-    {
-    	return 
-      [
-          [
-            "key" => "location",
-            "name" => "Server Location ",
-            "description" => "Where do you want us to deploy your server?",
-            "type" => "select",
-            "options" => [
-              "US" => "United States",
-              "CA" => "Canada",
-              "DE" => "Germany",
-              ],
-            "default_value" => "CA",
-            "rules" => ['required'],
-          ],
-          // add more input fields
-      ];
     }
 ```
 
@@ -227,17 +228,18 @@ You can retrieve checkout settings using
 # in create, upgrade, suspend, unsuspend and terminate using
 $this->order->option('location');
 
-# using $order variable
+# or using $order variable
+$order = $this->order;
 $order->option('location');
 ```
 
 ## Create
 
-The most important function inside a Service is `create()`. Esentailly, this function is called when a new order is created.
+The most important function inside a Service is `create()`. Essentially, this function is called when a new order is created.
 
 For instance, if you're selling web hosting packages whenever a package is purchased, you should use the create function to send an API request or call a function to create that webserver. Below is an example using this analogy.
 
-The Http class is a Laravel class that makes sending api requests and other requests much easier. To use it, include in the top of the file under namespace `use Illuminate\Support\Facades\Http;`
+The Http class is a Laravel class that makes sending API requests and other requests much easier. To use it, include `use Illuminate\Support\Facades\Http;` in the top of the file under namespace
 https://laravel.com/docs/10.x/http-client
 
 ```php
@@ -250,22 +252,22 @@ https://laravel.com/docs/10.x/http-client
     public function create(array $data = [])
     { 
     	$package = $this->order->package;
-      $user = $this->order->user;
-      $order = $this->order;
+        $user = $this->order->user;
+        $order = $this->order;
       
-      $response = Http::post('http://example.com/api/servers/create', [
-      		'username' => $user->username,
-          'memory' => $package->data('memory'),
-          'disk_space' => $package->data('disk_space'),
-          'cpu_limit' => $package->data('cpu_limit'),
-      ]);
+        $response = Http::post('http://example.com/api/servers/create', [
+      	    'username' => $user->username,
+            'memory' => $package->data('memory'),
+            'disk_space' => $package->data('disk_space'),
+            'cpu_limit' => $package->data('cpu_limit'),
+        ]);
       
-      if($response->failed()) {
-      		// handle failed response
-       }
+        if($response->failed()) {
+            // handle failed response
+        }
       
-      // store the data inside the orders data
-      // so that it can be accessed later
+        // store the data inside the orders data
+        // so that it can be accessed later
      	$order->update(['data' => $response->json()]);
     }
 
@@ -273,9 +275,9 @@ https://laravel.com/docs/10.x/http-client
 
 ## Suspend
 
-The suspend function is called whenever an order is suspended either by the schedular in an event the user paid to late or if a administrator suspends a server manually.
+The suspend function is called whenever an order is suspended either by the schedular in an event the user has not paid on time or if an administrator suspends a server manually.
 
-When this function is called, you should add a method to handle it appropriately.
+You should handle this function call appropriately by adding a method.
 
 ```php
     /**
@@ -287,22 +289,22 @@ When this function is called, you should add a method to handle it appropriately
     */
     public function suspend(array $data = [])
     { 
-      $response = Http::post('http://example.com/api/servers/suspend', [
-      		'server_id' => $this->order->data('server_id'),
-      ]);
+        $response = Http::post('http://example.com/api/servers/suspend', [
+            'server_id' => $this->order->data('server_id'),
+        ]);
       
-      if($response->failed()) {
-      		// handle failed response
-      }
+        if($response->failed()) {
+            // handle failed response
+        }
     }
 
 ```
 
 ## Unsuspend
 
-The unsuspend function is called whenever an order is unsuspended for example when a client pays an overdue invoice.
+The unsuspend function is called whenever an order is unsuspended, for example when a client pays an overdue invoice.
 
-When this function is called, you should add a method to handle it appropriately.
+You should handle this function call appropriately by adding a method.
 
 ```php
     /**
@@ -327,9 +329,9 @@ When this function is called, you should add a method to handle it appropriately
 
 ## Terminate
 
-The terminate funtion is supposed to completely erase or delete a service. This function is typically called when an inoivce has not been paid for a prolonged period of time.
+The terminate funtion is supposed to completely erase or delete a service. This function is typically called when an invoice has not been paid for a prolonged period of time.
 
-When this function is called, you should add a method to handle it appropriately.
+You should handle this function call appropriately by adding a method.
 
 ```php
     /**
@@ -366,12 +368,12 @@ The upgrade function is optional. If your service does not support upgrading or 
     */
     public function upgrade(Package $oldPackage, Package $newPackage)
     {
-    	$server_id = $this->order->data['id'];
-      $response = Http::post("http://example.com/api/servers/{$server_id}/update", [
-          'memory' => $newPackage->data('memory'),
-          'disk_space' => $newPackage->data('disk_space'),
-          'cpu_limit' => $newPackage->data('cpu_limit'),
-      ]);
+        $server_id = $this->order->data['id'];
+        $response = Http::post("http://example.com/api/servers/{$server_id}/update", [
+            'memory' => $newPackage->data('memory'),
+            'disk_space' => $newPackage->data('disk_space'),
+            'cpu_limit' => $newPackage->data('cpu_limit'),
+        ]);
     }
 ```
 
@@ -402,7 +404,7 @@ Service buttons are a set of custom buttons that appear on the edit page of orde
 
 ## Sidebar buttons (optional)
 
-Sidebar buttons are a set of custom buttons that appear on the sidebar of orders. You can optionally include this function to define them else delete this method
+Sidebar buttons are a set of custom buttons that appear on the sidebar of orders. You can optionally include this function to define them otherwise delete this method
 
 ```php
     /**
@@ -435,7 +437,7 @@ Sidebar buttons are a set of custom buttons that appear on the sidebar of orders
 
 ## Service Provider
 
-A service provider in laravel is a file that is auto-loaded. In this file you can register views, routes, translations, configs, migrations and much more.
+A service provider in Laravel is a file that is auto-loaded. In this file you can register views, routes, translations, configs, migrations and much more.
 
 You can find the Service provider in `Providers/YourNameServiceProvider.php`
 
@@ -465,9 +467,9 @@ WemX uses consistent structure for the forms for the config, package config and 
 
 ## Rules
 
-Rules allow you to sanitize data before storing it inside the database. For example, if you have a form field that requires an ip address, you can enforce that by adding rules to the field: `['required', 'ip']`
+Rules allow you to sanitize data before storing it inside the database. For example, if you have a form field that requires an IP address, you can enforce that by adding rules to the field: `['required', 'ip']`
 
-If you want to make a field optional, you can use `nullable` - check the link below for all the available rules. You can also create custom rules and specific them with `['required', new \App\Rules\CustomRule]`
+If you want to make a field optional, you can use `nullable` - check the link below for all the available rules. You can also create custom rules and specify them with `['required', new \App\Rules\CustomRule]`
 
 ```php
             [
@@ -485,7 +487,7 @@ Laravel validation rules: https://laravel.com/docs/10.x/validation#available-val
 
 You can use different types for form depending on the data being stored, here's a few examples:
 
-## Text
+### Text
 
 
 ```php
@@ -499,7 +501,7 @@ You can use different types for form depending on the data being stored, here's 
             ]
 ```
 
-## Number
+### Number
 
 ```php
             [
@@ -512,7 +514,7 @@ You can use different types for form depending on the data being stored, here's 
             ]
 ```
 
-## Select / Dropdown
+### Select / Dropdown
 
 The select type required the parameter "options"
 
@@ -523,10 +525,10 @@ The select type required the parameter "options"
                 "description" => "Which country are you located in?",
                 "type" => "select",
                 "options" => [
-                	"US" => "United States",
-                  "CA" => "Canada",
-                  "DE" => "Germany",
-                	],
+                    "US" => "United States",
+                    "CA" => "Canada",
+                    "DE" => "Germany",
+                ],
                 "default_value" => "CA",
                 "rules" => ['required'],
             ]
@@ -534,7 +536,7 @@ The select type required the parameter "options"
 
 To allow multiple values to be selected, you can add `"multiple" => true,`
 
-## Bool
+### Bool
 
 A bool is a true or false object. Bool type uses a checkbox
 ```php
@@ -543,7 +545,7 @@ A bool is a true or false object. Bool type uses a checkbox
                 "name" => "Enable Option ",
                 "description" => "Do you want to enable this option?",
                 "type" => "bool",
-                "rules" => ['required', "boolean"],
+                "rules" => ['required', 'boolean'],
             ]
 ```
 
