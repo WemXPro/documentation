@@ -2,11 +2,11 @@
 title: Installation
 description: 
 published: true
-date: 2023-10-30T14:44:18.847Z
+date: 2023-10-30T14:44:31.170Z
 tags: 
 editor: markdown
 dateCreated: 2023-10-30T14:44:18.847Z
 ---
 
 # Page unused
-If you haven't been redirected, please go to [Upgrading](/projects/upgrading)
+If you haven't been redirected, please go to [Upgrading](/projects/installation)
