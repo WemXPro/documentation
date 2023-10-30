@@ -189,7 +189,7 @@ $package->data('disk_space');
 
 ## Checkout Config
 
-The checkout config are the form fields dislayed to the buyer at checkout. It uses the same structure as the configs above.
+The checkout config are the form fields displayed to the buyer at checkout. It uses the same structure as the configs above.
 
 ```php
     /**
@@ -227,17 +227,18 @@ You can retrieve checkout settings using
 # in create, upgrade, suspend, unsuspend and terminate using
 $this->order->option('location');
 
-# using $order variable
+# or using $order variable
+$order = $this->order;
 $order->option('location');
 ```
 
 ## Create
 
-The most important function inside a Service is `create()`. Esentailly, this function is called when a new order is created.
+The most important function inside a Service is `create()`. Essentially, this function is called when a new order is created.
 
 For instance, if you're selling web hosting packages whenever a package is purchased, you should use the create function to send an API request or call a function to create that webserver. Below is an example using this analogy.
 
-The Http class is a Laravel class that makes sending api requests and other requests much easier. To use it, include in the top of the file under namespace `use Illuminate\Support\Facades\Http;`
+The Http class is a Laravel class that makes sending API requests and other requests much easier. To use it, include `use Illuminate\Support\Facades\Http;` in the top of the file under namespace
 https://laravel.com/docs/10.x/http-client
 
 ```php
@@ -273,7 +274,7 @@ https://laravel.com/docs/10.x/http-client
 
 ## Suspend
 
-The suspend function is called whenever an order is suspended either by the schedular in an event the user has not paid on time or if a administrator suspends a server manually.
+The suspend function is called whenever an order is suspended either by the schedular in an event the user has not paid on time or if an administrator suspends a server manually.
 
 You should handle this function call appropriately by adding a method.
 
@@ -287,13 +288,13 @@ You should handle this function call appropriately by adding a method.
     */
     public function suspend(array $data = [])
     { 
-      $response = Http::post('http://example.com/api/servers/suspend', [
-      		'server_id' => $this->order->data('server_id'),
-      ]);
+        $response = Http::post('http://example.com/api/servers/suspend', [
+            'server_id' => $this->order->data('server_id'),
+        ]);
       
-      if($response->failed()) {
-      		// handle failed response
-      }
+        if($response->failed()) {
+            // handle failed response
+        }
     }
 
 ```
@@ -402,7 +403,7 @@ Service buttons are a set of custom buttons that appear on the edit page of orde
 
 ## Sidebar buttons (optional)
 
-Sidebar buttons are a set of custom buttons that appear on the sidebar of orders. You can optionally include this function to define them else delete this method
+Sidebar buttons are a set of custom buttons that appear on the sidebar of orders. You can optionally include this function to define them otherwise delete this method
 
 ```php
     /**
@@ -485,7 +486,7 @@ Laravel validation rules: https://laravel.com/docs/10.x/validation#available-val
 
 You can use different types for form depending on the data being stored, here's a few examples:
 
-## Text
+### Text
 
 
 ```php
@@ -499,7 +500,7 @@ You can use different types for form depending on the data being stored, here's 
             ]
 ```
 
-## Number
+### Number
 
 ```php
             [
@@ -512,7 +513,7 @@ You can use different types for form depending on the data being stored, here's 
             ]
 ```
 
-## Select / Dropdown
+### Select / Dropdown
 
 The select type required the parameter "options"
 
@@ -534,7 +535,7 @@ The select type required the parameter "options"
 
 To allow multiple values to be selected, you can add `"multiple" => true,`
 
-## Bool
+### Bool
 
 A bool is a true or false object. Bool type uses a checkbox
 ```php
@@ -543,7 +544,7 @@ A bool is a true or false object. Bool type uses a checkbox
                 "name" => "Enable Option ",
                 "description" => "Do you want to enable this option?",
                 "type" => "bool",
-                "rules" => ['required', "boolean"],
+                "rules" => ['required', 'boolean'],
             ]
 ```
 
