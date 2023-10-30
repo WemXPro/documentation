@@ -2,7 +2,7 @@
 title: Tebex Checkout
 description: The Tebex checkout is a multi gateway payment handler
 published: true
-date: 2023-10-15T18:51:21.647Z
+date: 2023-10-30T15:26:22.462Z
 tags: 
 editor: markdown
 dateCreated: 2023-10-15T18:51:17.466Z
@@ -23,11 +23,11 @@ Before you can start using the Tebex checkout, you must first register your acco
 1. Go to Admin Area -> Gateways -> Create Gateway (Select Tebex Checkout or Subscription)
 2. Edit the newly created Tebex gateway, and add the username, password and webhook key
 
-![screenshot_2023-10-15_202702.png](/tebex-credentials.png)
+![Credentials](/assets/tebex/credentials.png)
 
 You can find the tebex username and password on the creator dashboard on Tebex https://creator.tebex.io/payment-methods/settings (see screenshot)
 
-![tebex-user-credentials.png](/tebex-user-credentials.png)
+![User Credentials](/assets/tebex/user-credentials.png)
 
 You can find the webhook secret key on this page: https://creator.tebex.io/webhooks/endpoints
 
