@@ -97,7 +97,7 @@ For the key, you should use the lower name of your service, followed by the key 
     {
         return [
             [
-            		"key" => "example::username",
+                "key" => "example::username",
                 "name" => "Panel Username",
                 "description" => "Username of an administrator on Example Panel",
                 "type" => "text",
@@ -105,7 +105,7 @@ For the key, you should use the lower name of your service, followed by the key 
                 "rules" => ['required'], // laravel validation rules
             ],
             [
-            		"key" => "encrypted::example::password",
+                "key" => "encrypted::example::password",
                 "name" => "example Password",
                 "description" => "Password of an administrator on Example Panel",
                 "type" => "password",
@@ -115,7 +115,7 @@ For the key, you should use the lower name of your service, followed by the key 
     }
 ```
 
-In case you want to store passwords, api keys or other sensitive data, you can add "encrypted" before the key so encrypted::example::hostname 
+In case you want to store passwords, API keys or other sensitive data, you can add "encrypted" before the key so encrypted::example::hostname 
 
 This will encrypt the data entered by users in the form, and store it in the database as encrypted. At retrieval, the data is decrypted.
 
@@ -164,20 +164,20 @@ The package config allows you to define the fields required for the service. It 
         [
          	[
          		"key" => "memory",
-            "name" => "Memory in MB",
-            "description" => "Allowed memory in MB",
-            "type" => "number",
-            "default_value" => 1024, # (optional)
-            "rules" => ['required'],
-          ],
-          [
+                "name" => "Memory in MB",
+                "description" => "Allowed memory in MB",
+                "type" => "number",
+                "default_value" => 1024, # (optional)
+                "rules" => ['required'],
+            ],
+            [
          		"key" => "disk_space",
-            "name" => "Disk Space in MB",
-            "description" => "Allowed disk space in MB",
-            "type" => "number",
-            "default_value" => 20000, # (optional)
-            "rules" => ['required'],
-          ]
+                "name" => "Disk Space in MB",
+                "description" => "Allowed disk space in MB",
+                "type" => "number",
+                "default_value" => 20000, # (optional)
+                "rules" => ['required'],
+            ]
         ];
     }
 ```
@@ -202,23 +202,23 @@ The checkout config are the form fields dislayed to the buyer at checkout. It us
      */
     public static function setPackageConfig(Package $package): array
     {
-    	return 
-      [
-          [
-            "key" => "location",
-            "name" => "Server Location ",
-            "description" => "Where do you want us to deploy your server?",
-            "type" => "select",
-            "options" => [
-              "US" => "United States",
-              "CA" => "Canada",
-              "DE" => "Germany",
-              ],
-            "default_value" => "CA",
-            "rules" => ['required'],
-          ],
-          // add more input fields
-      ];
+        return 
+        [
+            [
+                "key" => "location",
+                "name" => "Server Location ",
+                "description" => "Where do you want us to deploy your server?",
+                "type" => "select",
+                "options" => [
+                  "US" => "United States",
+                  "CA" => "Canada",
+                  "DE" => "Germany",
+                  ],
+                "default_value" => "CA",
+                "rules" => ['required'],
+            ],
+            // add more input fields
+        ];
     }
 ```
 
@@ -250,22 +250,22 @@ https://laravel.com/docs/10.x/http-client
     public function create(array $data = [])
     { 
     	$package = $this->order->package;
-      $user = $this->order->user;
-      $order = $this->order;
+        $user = $this->order->user;
+        $order = $this->order;
       
-      $response = Http::post('http://example.com/api/servers/create', [
-      		'username' => $user->username,
-          'memory' => $package->data('memory'),
-          'disk_space' => $package->data('disk_space'),
-          'cpu_limit' => $package->data('cpu_limit'),
-      ]);
+        $response = Http::post('http://example.com/api/servers/create', [
+      	    'username' => $user->username,
+            'memory' => $package->data('memory'),
+            'disk_space' => $package->data('disk_space'),
+            'cpu_limit' => $package->data('cpu_limit'),
+        ]);
       
-      if($response->failed()) {
-      		// handle failed response
-       }
+        if($response->failed()) {
+            // handle failed response
+        }
       
-      // store the data inside the orders data
-      // so that it can be accessed later
+        // store the data inside the orders data
+        // so that it can be accessed later
      	$order->update(['data' => $response->json()]);
     }
 
@@ -273,9 +273,9 @@ https://laravel.com/docs/10.x/http-client
 
 ## Suspend
 
-The suspend function is called whenever an order is suspended either by the schedular in an event the user paid to late or if a administrator suspends a server manually.
+The suspend function is called whenever an order is suspended either by the schedular in an event the user has not paid on time or if a administrator suspends a server manually.
 
-When this function is called, you should add a method to handle it appropriately.
+You should handle this function call appropriately by adding a method.
 
 ```php
     /**
@@ -300,9 +300,9 @@ When this function is called, you should add a method to handle it appropriately
 
 ## Unsuspend
 
-The unsuspend function is called whenever an order is unsuspended for example when a client pays an overdue invoice.
+The unsuspend function is called whenever an order is unsuspended, for example when a client pays an overdue invoice.
 
-When this function is called, you should add a method to handle it appropriately.
+You should handle this function call appropriately by adding a method.
 
 ```php
     /**
@@ -327,9 +327,9 @@ When this function is called, you should add a method to handle it appropriately
 
 ## Terminate
 
-The terminate funtion is supposed to completely erase or delete a service. This function is typically called when an inoivce has not been paid for a prolonged period of time.
+The terminate funtion is supposed to completely erase or delete a service. This function is typically called when an invoice has not been paid for a prolonged period of time.
 
-When this function is called, you should add a method to handle it appropriately.
+You should handle this function call appropriately by adding a method.
 
 ```php
     /**
@@ -366,12 +366,12 @@ The upgrade function is optional. If your service does not support upgrading or 
     */
     public function upgrade(Package $oldPackage, Package $newPackage)
     {
-    	$server_id = $this->order->data['id'];
-      $response = Http::post("http://example.com/api/servers/{$server_id}/update", [
-          'memory' => $newPackage->data('memory'),
-          'disk_space' => $newPackage->data('disk_space'),
-          'cpu_limit' => $newPackage->data('cpu_limit'),
-      ]);
+        $server_id = $this->order->data['id'];
+        $response = Http::post("http://example.com/api/servers/{$server_id}/update", [
+            'memory' => $newPackage->data('memory'),
+            'disk_space' => $newPackage->data('disk_space'),
+            'cpu_limit' => $newPackage->data('cpu_limit'),
+        ]);
     }
 ```
 
@@ -435,7 +435,7 @@ Sidebar buttons are a set of custom buttons that appear on the sidebar of orders
 
 ## Service Provider
 
-A service provider in laravel is a file that is auto-loaded. In this file you can register views, routes, translations, configs, migrations and much more.
+A service provider in Laravel is a file that is auto-loaded. In this file you can register views, routes, translations, configs, migrations and much more.
 
 You can find the Service provider in `Providers/YourNameServiceProvider.php`
 
@@ -465,9 +465,9 @@ WemX uses consistent structure for the forms for the config, package config and 
 
 ## Rules
 
-Rules allow you to sanitize data before storing it inside the database. For example, if you have a form field that requires an ip address, you can enforce that by adding rules to the field: `['required', 'ip']`
+Rules allow you to sanitize data before storing it inside the database. For example, if you have a form field that requires an IP address, you can enforce that by adding rules to the field: `['required', 'ip']`
 
-If you want to make a field optional, you can use `nullable` - check the link below for all the available rules. You can also create custom rules and specific them with `['required', new \App\Rules\CustomRule]`
+If you want to make a field optional, you can use `nullable` - check the link below for all the available rules. You can also create custom rules and specify them with `['required', new \App\Rules\CustomRule]`
 
 ```php
             [
@@ -524,9 +524,9 @@ The select type required the parameter "options"
                 "type" => "select",
                 "options" => [
                 	"US" => "United States",
-                  "CA" => "Canada",
-                  "DE" => "Germany",
-                	],
+                    "CA" => "Canada",
+                    "DE" => "Germany",
+                ],
                 "default_value" => "CA",
                 "rules" => ['required'],
             ]
