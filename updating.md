@@ -2,7 +2,7 @@
 title: Updating WemX
 description: This guide goes in depth on how to update WemX
 published: true
-date: 2023-10-15T19:19:37.597Z
+date: 2023-10-30T14:31:47.568Z
 tags: 
 editor: markdown
 dateCreated: 2023-07-08T14:25:19.188Z
