@@ -22,16 +22,16 @@ https://github.com/WemxPro/service-pterodactyl
 
 2. Set Read and Write for all fields and for description set "wemx" or any description you want (view screenshot below), hit Create Credentials. 
 
-![pterodactyl-config.png](/third-party/pterodactyl-config.png)
+![pterodactyl-config.png](/assets/third-party/pterodactyl-config.png)
 
 3. On your WemX application, head to the Admin Area select the Pterodactyl dropdown and head over to settings. Paste in your API key and set Pterodactyl URL to your panel url. Make sure the Panel url starts with https:// or http:// and does NOT end with a '/'. Correct format: https://panel.example.com
 
-![config.png](/third-party/config.png)
+![config.png](/assets/third-party/config.png)
 
 4. Create a brand new location, select the location to bind it to on Pterodactyl and save it.
 Note: Make sure the nodes of the selected location have nodes with enough allocations.
 
-![location.png](/third-party/location.png)
+![location.png](/assets/third-party/location.png)
 
 5. Pterodactyl is successfully setup, you can start making new packages. 
 ## Pterodactyl SSO
@@ -75,7 +75,7 @@ chown -R www-data:www-data /var/www/pterodactyl/*
 
 Head over to your Pterodactyl Configuration located in the Admin area of your application. Paste in your SSO key and save it. (view screenshot below)
 
-![config.png](/third-party/config.png)
+![config.png](/assets/third-party/config.png)
 
 > The Pterodactyl SSO composer package is uninstalled from your Pterodactyl Panel when you update Pterodactyl. You must reinstall it again using the composer command above and clear cache.
 {.is-warning}

@@ -16,7 +16,7 @@ CAPTCHA (Completely Automated Public Turing test to tell Computers and Humans Ap
 
 Turnstile delivers frustration-free, CAPTCHA-free web experiences to website visitors - with just a simple snippet of free code. Moreover, Turnstile stops abuse and confirms visitors are real without the data privacy concerns or awful UX that CAPTCHAs thrust on users.
 
-![turnstile_gif.gif](/captcha/turnstile_gif.gif)
+![Turnstile](/assets/captcha/turnstile.gif)
 
 1. Head over to https://dash.cloudflare.com/ on the sidebar select "CloudFlare Turnstile"
 

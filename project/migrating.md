@@ -32,12 +32,12 @@ Transferring active orders from Billing v1 and v2 is pretty straigt forward.
 1. Head over to `Admin area -> orders` and click `create`
 
 2. Select the package and price for your customer, set a due date corressponding to their original due date. Do not check the "Create an instance of package service" checkbox if your client already has a server. Create the order -- Check the screenshot below
-![create_order.png](/migrating/create_order.png)
+![create_order.png](/assets/migrating/create_order.png)
 
 3. Copy the orders ID
 
 4. Head over to Pterodactyl and find that users server, edit the server and go to the "details" tab. Change "External ID" to "wmx-x" replace "x" with the WemX order ID i.e "wmx-23" as shown in the screenshot below 
 
-![edit-external-id.png](/migrating/edit-external-id.png)
+![edit-external-id.png](/assets/migrating/edit-external-id.png)
 
 5. You're done -- Your order is now handled by WemX. If the order expires WemX will suspend the server. -- Optionally, if you want to test whether the connection is working you can press "suspend" on the order from the admin area and see if it gets suspended on Pterodactyl.
