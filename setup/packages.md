@@ -2,7 +2,7 @@
 title: Packages
 description: Learn how to properly setup packages
 published: true
-date: 2023-10-01T16:06:02.744Z
+date: 2023-10-30T15:25:35.139Z
 tags: 
 editor: markdown
 dateCreated: 2023-09-30T17:14:56.199Z
@@ -45,7 +45,7 @@ You can use data to provide a json object to include in the request. Headers can
 Let's create a cool webhook to demonstrate its purpose. In this demonstration, we are going to create a webhook that notifies on creation that a specific user has made a purcahse
 
 On your discord server -> go to a channel -> edit -> integrations
-![webhook.png](/webhook.png)
+![Webhook](/assets/webhook/index.png)
 
 Copy the Webhook URL and create a new webhook
 
@@ -63,15 +63,13 @@ Set the method to POST, in URL enter your discord webhook URL inside data add:
 }
 ```
 
-![create-webhook.png](/create-webhook.png)
-
+![Create Webhook](/assets/webhook/create.png)
 Leave headers empty.
 
 Now when a user places an order, a noticiation will be sent to Discord:
-![webhook-received.png](/webhook-received.png)
+![Webhook Received](/assets/webhook/received.png)
 
 You can use custom variables in webhooks identified by the `$order` operator. The $order operator has access to the user, package, payments and more.
-
 
 Available variables:
 ```php
