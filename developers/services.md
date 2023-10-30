@@ -213,7 +213,7 @@ The checkout config are the form fields dislayed to the buyer at checkout. It us
                   "US" => "United States",
                   "CA" => "Canada",
                   "DE" => "Germany",
-                  ],
+                ],
                 "default_value" => "CA",
                 "rules" => ['required'],
             ],
