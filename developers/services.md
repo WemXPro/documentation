@@ -171,7 +171,7 @@ The package config allows you to define the fields required for the service. It 
                 "rules" => ['required'],
             ],
             [
-         		"key" => "disk_space",
+                "key" => "disk_space",
                 "name" => "Disk Space in MB",
                 "description" => "Allowed disk space in MB",
                 "type" => "number",
