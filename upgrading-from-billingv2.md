@@ -2,7 +2,7 @@
 title: Migrating to WemX
 description: This guide goes over the migration process from other services such as Billing v1, Billing v2, WHMCS, Blesta etc.
 published: true
-date: 2023-07-10T19:26:41.541Z
+date: 2023-10-30T14:32:03.619Z
 tags: 
 editor: markdown
 dateCreated: 2023-07-08T20:53:04.565Z
