@@ -162,8 +162,8 @@ The package config allows you to define the fields required for the service. It 
     {
         return 
         [
-         	[
-         		"key" => "memory",
+            [
+                "key" => "memory",
                 "name" => "Memory in MB",
                 "description" => "Allowed memory in MB",
                 "type" => "number",
@@ -523,7 +523,7 @@ The select type required the parameter "options"
                 "description" => "Which country are you located in?",
                 "type" => "select",
                 "options" => [
-                	"US" => "United States",
+                    "US" => "United States",
                     "CA" => "Canada",
                     "DE" => "Germany",
                 ],
