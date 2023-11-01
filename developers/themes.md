@@ -37,13 +37,14 @@ Note: In this example, the custom client theme is called Material
 ```
 gray: {"50":"#F9FAFB","100":"#F3F4F6","200":"#E5E7EB","300":"#D1D5DB","400":"#9CA3AF","500":"#6B7280","600":"#4B5563","700":"#374151","800":"#1F2937","900":"#111827"},
 ```
-4. Change the hex value in "900" from "#111827" to "#171717":
+3. Change the hex value in "900" from "#111827" to "#171717":
 ```
 gray: {"50":"#F9FAFB","100":"#F3F4F6","200":"#E5E7EB","300":"#D1D5DB","400":"#9CA3AF","500":"#6B7280","600":"#4B5563","700":"#374151","800":"#1F2937","900":"#171717"},
 ```
-6. Save the file, and reload your page.
+4. Save the file, and reload your page.
 
 You should see the background color change to "#171717" after the reload.
+
 
 These steps are also true for changing the background colors of the cards, but instead of the value in "900", the value in "800" should be changed:
 ```
