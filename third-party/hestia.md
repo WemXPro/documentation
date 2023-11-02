@@ -2,7 +2,7 @@
 title: Hestia
 description: This guide goes through the process of installing Hestia service on WemX
 published: true
-date: 2023-11-02T20:00:49.136Z
+date: 2023-11-02T20:01:30.837Z
 tags: 
 editor: markdown
 dateCreated: 2023-11-02T19:58:36.723Z
@@ -33,9 +33,7 @@ https://hestiacp.com/install.html
 
 # Setup Hestia
 
-After installing Hestia, header over to Admin -> Services -> Enable Hestia
-
-![hestia-services.png](/assets/hestia-services.png)
+After installing Hestia, head over to Admin -> Services -> Enable Hestia
 
 After enabling Hestia, click on Configuration
 
