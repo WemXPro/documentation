@@ -2,7 +2,7 @@
 title: Hestia
 description: This guide goes through the process of installing Hestia service on WemX
 published: true
-date: 2023-11-02T19:58:36.723Z
+date: 2023-11-02T20:00:31.067Z
 tags: 
 editor: markdown
 dateCreated: 2023-11-02T19:58:36.723Z
@@ -26,8 +26,7 @@ https://hestiacp.com/install.html
 # Installing Hestia Service
 
 1. Download the latest Hestia Service ZIP: https://github.com/WemXPro/service-hestia/archive/refs/heads/main.zip
-2. Using FTP, locate folder /var/www/wemx/app/Services
-3. Create a new folder called Hestia
+2. Using FTP, locate folder /var/www/wemx/app/Services and create a new folder called Hestia
 4. Open the ZIP file downloaded earlier, then open `service-hestia-main` folder
 5. Upload all files in this folder to the Hestia folder in `/var/www/wemx/app/Services/Hestia`
 6. Update the Hestia dependencies with `php artisan module:update Hestia`
