@@ -434,6 +434,30 @@ Sidebar buttons are a set of custom buttons that appear on the sidebar of orders
         ];    
     }
 ```
+## Test Connection (optional)
+
+This method is optional and not required to include if your service does not support it.
+
+The Test Connection method allows you to define a function to test the connection between WemX and an API. In this method, you will need to specify a method that attempts to connect to an API. 
+
+```php
+    /**
+     * Test API connection
+    */
+    public static function testConnection()
+    {
+        try {
+            // try to get list of packages through API request
+            self::api()->getModuleUser()->listUserPackages();
+        } catch(\Exception $error) {
+            // if try-catch fails, return the error with details
+            return redirect()->back()->withError("Failed to connect to Hestia. <br><br>[Hestia] {$error->getMessage()}");
+        }
+
+        // if no errors are logged, return a success message
+        return redirect()->back()->withSuccess("Successfully connected with Hestia");
+    }
+```
 
 ## Service Provider
 
