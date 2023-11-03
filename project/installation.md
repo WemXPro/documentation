@@ -2,7 +2,7 @@
 title: Installation
 description: This page goes in depth on the installation process
 published: true
-date: 2023-10-30T14:43:30.279Z
+date: 2023-11-03T18:03:58.281Z
 tags: 
 editor: markdown
 dateCreated: 2023-07-08T10:03:10.397Z
@@ -84,7 +84,7 @@ composer require wemx/installer dev-wemxpro
 php artisan wemx:install
 ```
 
-## Cofigure environment
+## Configure environment
 ```shell
 # Create a new environment file
 cp .env.example .env
