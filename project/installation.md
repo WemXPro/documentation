@@ -2,7 +2,7 @@
 title: Installation
 description: This page goes in depth on the installation process
 published: true
-date: 2023-11-04T17:05:26.873Z
+date: 2023-11-04T17:06:27.565Z
 tags: 
 editor: markdown
 dateCreated: 2023-07-08T10:03:10.397Z
