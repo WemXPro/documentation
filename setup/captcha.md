@@ -2,7 +2,7 @@
 title: Setting up Captcha
 description: This guide goes over the process to setup Captcha on your WemX application.
 published: true
-date: 2023-07-12T12:58:20.918Z
+date: 2023-11-04T17:42:21.723Z
 tags: 
 editor: markdown
 dateCreated: 2023-07-08T21:45:15.032Z
@@ -23,3 +23,13 @@ Turnstile delivers frustration-free, CAPTCHA-free web experiences to website vis
 2. Generate new credentials for your domain
 
 3. Head over to your WemX installation `Admin Area -> Configuration -> Captcha` and enter your CloudFlare Turnstile details. Enable the Captcha and select the pages you want it active on.
+
+You are done!
+
+If you locked yourself out of your application, for example if the CloudFlare config is invalid, you can run the commands below to disable the CAPTCHA
+
+```
+cd /var/www/wemx
+php artisan tinker
+Settings::forget('encrypted::captcha::cloudflare');
+```
