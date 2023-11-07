@@ -2,7 +2,7 @@
 title: Mail Configuration
 description: 
 published: true
-date: 2023-11-07T11:46:42.816Z
+date: 2023-11-07T11:46:51.330Z
 tags: 
 editor: markdown
 dateCreated: 2023-03-09T12:41:18.157Z
@@ -64,6 +64,8 @@ php artisan setup:mail
 ## After entering the details
 > You can check the connection here: `example.com/admin/settings/mail`
 {.is-success}
+
+---
 
 > [Source](https://docs.namelessmc.com/en/smtp) on where we got most of the info
 {.is-info}
