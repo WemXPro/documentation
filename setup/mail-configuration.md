@@ -2,7 +2,7 @@
 title: Mail Configuration
 description: 
 published: true
-date: 2023-07-08T21:51:17.053Z
+date: 2023-11-07T11:46:42.816Z
 tags: 
 editor: markdown
 dateCreated: 2023-03-09T12:41:18.157Z
@@ -64,14 +64,6 @@ php artisan setup:mail
 ## After entering the details
 > You can check the connection here: `example.com/admin/settings/mail`
 {.is-success}
-
-## A note on port 465
-Do not use port 465. Your mail server should also allow connecting to port 587, use that instead. `secure` should be set to `tls` in `core/email.php`.
-
-If you have to use port 465, and emails are not being delivered/timing out, try setting `secure` to `ssl` in `core/email.php`.
-
-This port is obsolete, as described in [RFC 8314](https://www.rfc-editor.org/rfc/rfc8314.html#section-7.3):
-> Historically, port 465 was briefly registered as the "smtps" port. This registration made no sense, as the SMTP transport MX infrastructure has no way to specify a port, so port 25 is always used.  As a result, the registration was revoked and was subsequently reassigned to a different service.  In hindsight, the "smtps" registration should have been renamed or reserved rather than revoked.  Unfortunately, some widely deployed mail software interpreted "smtps" as "submissions" [RFC6409] and used that port for email submission by default when an end user requested security during account setup.  If a new port is assigned for the submissions service, either (a) email software will continue with unregistered use of port 465 (leaving the port registry inaccurate relative to de facto practice and wasting a well-known port) or (b) confusion between the de facto and registered ports will cause harmful interoperability problems that will deter the use of TLS for Message Submission.  The authors of this document believe that both of these outcomes are less desirable than a "wart" in the registry documenting real-world usage of a port for two purposes. Although STARTTLS on port 587 has been deployed, it has not replaced the deployed use of Implicit TLS submission on port 465.
 
 > [Source](https://docs.namelessmc.com/en/smtp) on where we got most of the info
 {.is-info}
