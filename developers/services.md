@@ -2,7 +2,7 @@
 title: Service Development
 description: This documentation page goes in depth in regarding development of service for WemX
 published: true
-date: 2023-11-30T21:31:08.477Z
+date: 2023-11-30T21:33:21.199Z
 tags: 
 editor: markdown
 dateCreated: 2023-10-23T23:56:59.457Z
@@ -381,9 +381,7 @@ The upgrade function is optional. If your service does not support upgrading or 
 
 The permissions functions allows you to protect custom routes or pages for your service by checking if a member / subuser has the corressponding permission to perform a certain action or to access a page. For instance, if your service has custom routes defined for clients, the key of the permission is the name of the route.
 
-Take a look at this routes file: https://github.com/WemXPro/service-proxmox/blob/main/routes.php - As you can see, the keys in the array below are the route names with a description of what that route does. This list appears when a admin invites a new member to the order.
-
-It's important that your service contains the parameter `{order}` if you wish for the application to check for permissions for example: 
+Take a look at this custom route that allows clients to start their server. It's important that your route(s) contains the `{order}` parameter as shown in the example below
 
 ```php
  Route::get('/start', [Service::class, 'startServer'])->name('proxmox.server.start');
@@ -393,8 +391,8 @@ It's important that your service contains the parameter `{order}` if you wish fo
     /**
      * Define custom permissions for this service
      *
-     * key: route name or page name
-     * value: A short description of what the permission does
+     * key: Route name or page name
+     * value: Short description of what the permission does
      *
      * @return array
      */
@@ -404,15 +402,7 @@ It's important that your service contains the parameter `{order}` if you wish fo
             'proxmox.server.start' => [
                 'description' => 'Permission to start a Proxmox VM from the dashboard',
             ],
-            'proxmox.server.stop' => [
-                'description' => 'Permission to stop a Proxmox VM from the dashboard',
-            ],
-            'proxmox.server.shutdown' => [
-                'description' => 'Permission to shutdown a Proxmox VM from the dashboard',
-            ],
-            'proxmox.server.reboot' => [
-                'description' => 'Permission to reboot a Proxmox VM from the dashboard',
-            ],
+            // define more permissions
         ];
     }
 ```
