@@ -2,7 +2,7 @@
 title: Service Development
 description: This documentation page goes in depth in regarding development of service for WemX
 published: true
-date: 2023-11-30T21:34:40.823Z
+date: 2023-11-30T21:40:20.341Z
 tags: 
 editor: markdown
 dateCreated: 2023-10-23T23:56:59.457Z
@@ -394,7 +394,7 @@ To protect this route with permissions, we can add the code below to Service.php
      * Define custom permissions for this service
      *
      * key: Route name or page name
-     * value: Short description of what the permission does
+     * description: Description of what the permission does
      *
      * @return array
      */
