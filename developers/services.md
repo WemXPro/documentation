@@ -2,7 +2,7 @@
 title: Service Development
 description: This documentation page goes in depth in regarding development of service for WemX
 published: true
-date: 2023-11-30T21:34:08.802Z
+date: 2023-11-30T21:34:40.823Z
 tags: 
 editor: markdown
 dateCreated: 2023-10-23T23:56:59.457Z
@@ -387,7 +387,7 @@ Take a look at this custom route that allows clients to start their server. It's
  Route::get('/start', [Service::class, 'startServer'])->name('proxmox.server.start');
 ```
 
-To protect this route with permissions, we can add the code below:
+To protect this route with permissions, we can add the code below to Service.php
 
 ```php
     /**
