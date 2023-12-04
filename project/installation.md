@@ -2,7 +2,7 @@
 title: Installation
 description: This page goes in depth on the installation process
 published: true
-date: 2023-11-04T17:06:27.565Z
+date: 2023-12-04T13:31:03.075Z
 tags: 
 editor: markdown
 dateCreated: 2023-07-08T10:03:10.397Z
@@ -80,7 +80,7 @@ cd wemx
 At this point we have created a brand new Laravel project, now we will be installing WemX.
 ```shell
 # Download the WemX Installer using composer
-composer require wemx/installer dev-wemxpro
+composer require wemx/installer dev-web
 
 # Initiate the installer
 php artisan wemx:install
