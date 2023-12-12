@@ -2,7 +2,7 @@
 title: Installation
 description: This page goes in depth on the installation process
 published: true
-date: 2023-12-04T13:31:03.075Z
+date: 2023-12-12T21:05:21.020Z
 tags: 
 editor: markdown
 dateCreated: 2023-07-08T10:03:10.397Z
@@ -125,17 +125,11 @@ Make sure you have created a new database for WemX
 >```
 
 ``` shell
-# Setup the environment
-php artisan setup:environment
+# Setup the environment & Database
+php artisan setup:environment && php artisan setup:database
 
-# Setup database environment
-php artisan setup:database
-
-# Enable all the default modules and services
-php artisan module:enable
-
-# Create a symbolic link from public/storage to storage/app/public
-php artisan storage:link
+# Enable default Modules & Make a symbolic link
+php artisan module:enable && php artisan storage:link
 ```
 
 ### Migrate the database
