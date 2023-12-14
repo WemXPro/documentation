@@ -2,7 +2,7 @@
 title: Service Development
 description: This documentation page goes in depth in regarding development of service for WemX
 published: true
-date: 2023-11-30T21:40:20.341Z
+date: 2023-12-14T21:42:36.731Z
 tags: 
 editor: markdown
 dateCreated: 2023-10-23T23:56:59.457Z
@@ -201,7 +201,7 @@ The checkout config are the form fields displayed to the buyer at checkout. It u
      *
      * @return array
      */
-    public static function setPackageConfig(Package $package): array
+    public static function setCheckoutConfig(Package $package): array
     {
         return 
         [
