@@ -2,7 +2,7 @@
 title: Updating WemX
 description: This guide goes in depth on how to update WemX
 published: true
-date: 2023-10-30T14:31:47.568Z
+date: 2023-12-19T18:03:16.633Z
 tags: 
 editor: markdown
 dateCreated: 2023-07-08T14:25:19.188Z
@@ -21,7 +21,7 @@ You should make a backup of the database and files before updating.
 cd /var/www/wemx
 
 # Download latest available version of the installer
-composer require wemx/installer dev-wemxpro
+composer require wemx/installer dev-web
 
 # Initiate updater
 php artisan wemx:update
