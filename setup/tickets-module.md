@@ -2,7 +2,7 @@
 title: Tickets Module
 description: This guide documents the installation and setup for the tickets module
 published: true
-date: 2023-12-21T21:38:26.226Z
+date: 2023-12-21T21:44:29.406Z
 tags: 
 editor: markdown
 dateCreated: 2023-12-21T21:25:12.800Z
@@ -43,3 +43,20 @@ The Discord sync feature allows you to syncronize tickets between your web appli
 
 4. Open your Discord server, find a private channel and run `/sync` enter in your domain and the api key from tickets module settings
 5. Create a new ticket on the web to see if everything is working correctly. It can take a couple of seconds for the ticket to be created on Discord
+
+### Discord Bot Commands
+
+/close
+Close a ticket
+
+/reopen
+Reopen a ticket
+
+/lock
+Lock a ticket on web, deletes the ticket on discord after 5 seconds
+
+/sync
+Sync a discord server
+
+/unsync
+unsynchronize a discord server
