@@ -2,7 +2,7 @@
 title: Packages
 description: Learn how to properly setup packages
 published: true
-date: 2023-10-30T15:25:35.139Z
+date: 2023-12-22T20:48:20.649Z
 tags: 
 editor: markdown
 dateCreated: 2023-09-30T17:14:56.199Z
@@ -73,21 +73,21 @@ You can use custom variables in webhooks identified by the `$order` operator. Th
 
 Available variables:
 ```php
-$order->id
-$order->name
-$order->status
-$order->due_date
-$order->price['price']
-$order->price['renewal_price']
-$order->due_date
-$order->created_at
-// more from orders model
+{{ $order->id }}
+{{ $order->name }}
+{{ $order->status }}
+{{ $order->due_date }}
+{{ $order->price['price'] }}
+{{ $order->price['renewal_price'] }}
+{{ $order->due_date }}
+{{ $order->created_at }}
+// more from orders model }}
 
-$order->user->username
-$order->user->email
-// more from the user model
+{{ $order->user->username }}
+{{ $order->user->email }}
+// more from the user model }}
 
-$order->package->name
-$order->package->status
-// more from packages model
+{{ $order->package->name }}
+{{ $order->package->status }}
+// more from packages model }}
 ```
