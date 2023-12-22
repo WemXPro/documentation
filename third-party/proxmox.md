@@ -42,7 +42,9 @@ Step 4: Head over to your store and access the admin panel. Navigate to 'Service
 
 ![store-Setup2.png](/assets/store-Setup2.png)
 
-Step 5: After entering all information correctly, click on 'Update.' Proceed to test the connection. Once confirmed, you should be ready to create packages for your store
+Step 5: After entering all information correctly, click on 'Update.' Proceed to test the connection. Once confirmed, you should Should See a note at the top in green  
+Successfully connected with Proxmox after this u should
+be ready to create packages for your store
 
 Step 6: If you encounter any issues after following these steps, don't hesitate to reach out to the WemX support chat in discord . Be sure to include details about the problem you're facing along with a screenshot of the error for better assistance
 
