@@ -18,14 +18,6 @@ dateCreated: 2023-12-03T17:08:09.490Z
 
 # Setup Proxmox service
 
-After installing Proxmox, head over to Admin -> Services -> Enable Proxmox
-
-![hestia-services.png](/assets/hestia-services.png)
-
-After enabling Proxmox, click on Configuration
-
-![proxmox-config.png](/assets/proxmox-config.png)
-
 - Hostname: Enter the URL to your Proxmox panel including http:// or https:// and port
 - ![Proxmox-panellogin.png](/assets/Proxmox-panellogin.png)
 
