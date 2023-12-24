@@ -21,14 +21,15 @@ In this example, we will be creating a new client theme called Material
 1. Duplicate the default theme folder `resources/themes/client/tailwind` to `resources/themes/client/material`
 2. Inside the root of the newly created theme folder you will find a file called `theme.php` here you can specify the new name. Make sure to change the name to Material
 3. Duplicate the all the default service and module folders
-e.g. `app/Services/Universal/Resources/views/client/tailwind` to `app/Services/Universal/Resources/views/client/material`
-
+```
+e.g. app/Services/Universal/Resources/views/client/tailwind -> app/Services/Universal/Resources/views/client/material
 or
-`Modules/Affiliates/Resources/views/client/tailwind` to `Modules/Affiliates/Resources/views/client/material`
+Modules/Affiliates/Resources/views/client/tailwind to Modules/Affiliates/Resources/views/client/material
+```
 5. Activate the new theme in the Admin Area
 6. You may customize the theme to your preference
 
-> 
+> Please make sure all of the service and module folders are duplicated.
 {.is-warning}
 
 ## Editing Client Theme Background Colors
