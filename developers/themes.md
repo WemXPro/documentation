@@ -26,8 +26,8 @@ e.g. app/Services/Universal/Resources/views/client/tailwind -> app/Services/Univ
 or
 Modules/Affiliates/Resources/views/client/tailwind to Modules/Affiliates/Resources/views/client/material
 ```
-5. Activate the new theme in the Admin Area
-6. You may customize the theme to your preference
+4. Activate the new theme in the Admin Area
+5. You may customize the theme to your preference
 
 > Please make sure all of the service and module folders are duplicated.
 {.is-warning}
