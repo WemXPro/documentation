@@ -2,7 +2,7 @@
 title: Proxmox
 description: This guide explains how you can setup the proxmox integration with WemX
 published: true
-date: 2023-12-30T18:10:46.806Z
+date: 2023-12-30T18:11:47.209Z
 tags: 
 editor: markdown
 dateCreated: 2023-12-03T17:08:09.490Z
@@ -34,22 +34,20 @@ After enabling Proxmox, click on Configuration
 
 In order to setup the Proxmox service correctly on WemX, you need to create an API token on your Proxmox panel. 
 
-1. Open your Proxmox panel -> Datacenter -> API Tokens
+1. Open your Proxmox panel -> Datacenter -> API Tokens and click "Add" API Token 
 
 ![proxmox_apitoken.png](/assets/proxmox_apitoken.png)
 
-2. Click "Add" API Token
-
 ![proxmox_create_api_token.png](/assets/proxmox_create_api_token.png)
 
-3. Set "wemx" as token ID and make sure the "Privilege Separation" option is NOT selected
+2. Set "wemx" as token ID and make sure the "Privilege Separation" option is NOT selected
 
 ![proxmox_create_token_id.png](/assets/proxmox_create_token_id.png)
 
-4. After you have created the token successfully, Proxmox shows the details for the API token. Make sure to copy them right away as they don't show up again.
+3. After you have created the token successfully, Proxmox shows the details for the API token. Make sure to copy them right away as they don't show up again.
 
 ![proxmox_token_secret.png](/assets/proxmox_token_secret.png)
 
-5. Open WemX and locate the configuration for Proxmox, fill in the token ID and token secret and the Proxmox URL. Save the configuration and click on "Test connection" to verify everything is working.
+4. Open WemX and locate the configuration for Proxmox, fill in the token ID and token secret and the Proxmox URL. Save the configuration and click on "Test connection" to verify everything is working.
 
 ![proxmox_wemx_config.png](/assets/proxmox_wemx_config.png)
