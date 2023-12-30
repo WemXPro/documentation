@@ -2,7 +2,7 @@
 title: Proxmox
 description: This guide explains how you can setup the proxmox integration with WemX
 published: true
-date: 2023-12-03T17:08:54.232Z
+date: 2023-12-30T18:10:46.806Z
 tags: 
 editor: markdown
 dateCreated: 2023-12-03T17:08:09.490Z
@@ -16,18 +16,40 @@ dateCreated: 2023-12-03T17:08:09.490Z
 4. Upload all files in this folder to the Proxmox folder in /var/www/wemx/app/Services/Proxmox
 5. Update the Proxmox dependencies with php artisan module:update Proxmox
 
-# Setup Proxmox service
+# Configure Proxmox service
 
 After installing Proxmox, head over to Admin -> Services -> Enable Proxmox
 
-![hestia-services.png](/assets/hestia-services.png)
+![proxmox_config.png](/assets/proxmox_config.png)
 
 After enabling Proxmox, click on Configuration
 
 ![proxmox-config.png](/assets/proxmox-config.png)
 
 - Hostname: Enter the URL to your Proxmox panel including http:// or https:// and port
+- Token ID: Enter token ID from API token for Proxmox
+- Token Secret: Enter token secret from API token for Proxmox
 
-You can create a new token on your Proxmox panel under Datacenter -> API Tokens -> Add
+# Creating API token on Proxmox
 
-You can create a new token, and copy the token id and password once it has been generated.
+In order to setup the Proxmox service correctly on WemX, you need to create an API token on your Proxmox panel. 
+
+1. Open your Proxmox panel -> Datacenter -> API Tokens
+
+![proxmox_apitoken.png](/assets/proxmox_apitoken.png)
+
+2. Click "Add" API Token
+
+![proxmox_create_api_token.png](/assets/proxmox_create_api_token.png)
+
+3. Set "wemx" as token ID and make sure the "Privilege Separation" option is NOT selected
+
+![proxmox_create_token_id.png](/assets/proxmox_create_token_id.png)
+
+4. After you have created the token successfully, Proxmox shows the details for the API token. Make sure to copy them right away as they don't show up again.
+
+![proxmox_token_secret.png](/assets/proxmox_token_secret.png)
+
+5. Open WemX and locate the configuration for Proxmox, fill in the token ID and token secret and the Proxmox URL. Save the configuration and click on "Test connection" to verify everything is working.
+
+![proxmox_wemx_config.png](/assets/proxmox_wemx_config.png)
