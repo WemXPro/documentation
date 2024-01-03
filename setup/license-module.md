@@ -2,7 +2,7 @@
 title: Licensing Service
 description: This guide explains how the licensing service works
 published: true
-date: 2024-01-03T20:49:05.611Z
+date: 2024-01-03T20:49:33.404Z
 tags: 
 editor: markdown
 dateCreated: 2024-01-01T21:07:56.320Z
@@ -79,7 +79,7 @@ Example Response
         "created_at": "2024-01-01T20:54:41.000000Z",
         "updated_at": "2024-01-01T20:55:13.000000Z"
     },
-		{
+	{
         "id": 17,
         "license_id": 3,
         "type": "development",
