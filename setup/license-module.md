@@ -2,7 +2,7 @@
 title: Licensing Service
 description: This guide explains how the licensing service works
 published: true
-date: 2024-01-01T21:31:16.800Z
+date: 2024-01-03T20:49:05.611Z
 tags: 
 editor: markdown
 dateCreated: 2024-01-01T21:07:56.320Z
@@ -29,9 +29,9 @@ POST
 Data
 ```json
 {
-		"license": "LCE-e75803b9-1b3a-4801-a3ea-30cc1eb0e4b2",
-  	"domain": "demo.example.net", // the domain can be added on the license edit page
-  	"packages": "Example" // the name of the package for the license, separate multiple packages with a comma ","
+  "license": "LCE-e75803b9-1b3a-4801-a3ea-30cc1eb0e4b2",
+  "domain": "demo.example.net", // the domain can be added on the license edit page
+  "packages": "Example" // the name of the package for the license, separate multiple packages with a comma ","
 }
 ```
 
