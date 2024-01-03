@@ -2,7 +2,7 @@
 title: Licensing Service
 description: This guide explains how the licensing service works
 published: true
-date: 2024-01-03T20:49:54.628Z
+date: 2024-01-03T20:50:12.270Z
 tags: 
 editor: markdown
 dateCreated: 2024-01-01T21:07:56.320Z
@@ -156,7 +156,7 @@ POST
 Data
 ```json
 {
-		"email": "mfmjqpfbnaqnrpxrgx@cazlq.com",
+	"email": "mfmjqpfbnaqnrpxrgx@cazlq.com",
   	"domain": "example.net",
   	"package_id": 84,
   	"price_id": 122
