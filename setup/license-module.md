@@ -2,7 +2,7 @@
 title: Licensing Service
 description: This guide explains how the licensing service works
 published: true
-date: 2024-01-03T20:49:33.404Z
+date: 2024-01-03T20:49:54.628Z
 tags: 
 editor: markdown
 dateCreated: 2024-01-01T21:07:56.320Z
@@ -114,7 +114,7 @@ POST
 Data
 ```json
 {
-		"license": "LCE-e75803b9-1b3a-4801-a3ea-30cc1eb0e4b2",
+	"license": "LCE-e75803b9-1b3a-4801-a3ea-30cc1eb0e4b2",
   	"domain": "demo.wemx.net",
   	"packages": "Example",
   	"resource_name": "example"
