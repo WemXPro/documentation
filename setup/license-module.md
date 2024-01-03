@@ -2,7 +2,7 @@
 title: Licensing Service
 description: This guide explains how the licensing service works
 published: true
-date: 2024-01-03T20:50:12.270Z
+date: 2024-01-03T20:50:21.478Z
 tags: 
 editor: markdown
 dateCreated: 2024-01-01T21:07:56.320Z
@@ -186,8 +186,8 @@ POST
 Data
 ```json
 {
-		"order_id": 232,
-		"due_date": "2028-01-01T20:55:13.000000Z" // any date in the future
+	"order_id": 232,
+	"due_date": "2028-01-01T20:55:13.000000Z" // any date in the future
 }
 ```
 
