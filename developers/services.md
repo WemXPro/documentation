@@ -2,7 +2,7 @@
 title: Service Development
 description: This documentation page goes in depth in regarding development of service for WemX
 published: true
-date: 2023-12-14T21:42:36.731Z
+date: 2024-01-13T00:19:47.650Z
 tags: 
 editor: markdown
 dateCreated: 2023-10-23T23:56:59.457Z
@@ -488,6 +488,24 @@ The Test Connection method allows you to define a function to test the connectio
 
         // if no errors are logged, return a success message
         return redirect()->back()->withSuccess("Successfully connected with Hestia");
+    }
+```
+
+## Event Checkout
+
+This method is called right when a user attempts to checkout and can be useful to throw exceptions.
+
+```php
+    /**
+     * @throw Exception
+    */
+    public static function eventCheckout()
+    {
+    		// check if nodes are available
+        $response = Http::get('https://example.com/nodes/allocations/available');
+        if($response->failed()) {
+						throw new \Exception('Could not find a suitable node to deploy your server on');
+				}
     }
 ```
 
