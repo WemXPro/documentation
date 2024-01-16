@@ -2,7 +2,7 @@
 title: WISP Module
 description: Start selling wisp servers with the WISP module
 published: true
-date: 2024-01-16T18:03:19.809Z
+date: 2024-01-16T18:21:01.117Z
 tags: 
 editor: markdown
 dateCreated: 2024-01-16T18:03:19.809Z
@@ -11,6 +11,7 @@ dateCreated: 2024-01-16T18:03:19.809Z
 # WISP Panel
 WISP is a game panel based on https://pterodactyl.io/
 
+Download WISP Service: https://wemx.net/resources/show/14
 # Installation
 
 Open the Admin area -> click "Services" -> Find WISP on the marketplace and install it. You can also manually download the WISP folder from wemx.net/marketplace and upload it to /path/to/wemx/app/Services/
