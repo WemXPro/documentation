@@ -2,7 +2,7 @@
 title: Queue Worker
 description: This page goes in depth about the queue worker
 published: true
-date: 2024-02-01T16:50:18.401Z
+date: 2024-02-01T16:55:02.293Z
 tags: 
 editor: markdown
 dateCreated: 2024-02-01T16:48:44.413Z
@@ -11,6 +11,9 @@ dateCreated: 2024-02-01T16:48:44.413Z
 # Queue Worker
 
 The queue worker handles heavy tasks in the background to ensure your clients don't face slow loading pages or interruptions. This includes tasks such as sending webhooks, processing data and sending emails.
+
+> If your panel is displaying an erorr that the Queue Worker is not running, please wait for 5 minutes. If the error doesn't go away try one of the non-default queue services. 
+{.is-warning}
 
 # Cron Queue (Default)
 
