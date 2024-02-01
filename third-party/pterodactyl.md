@@ -2,7 +2,7 @@
 title: Pterodactyl
 description: This page documents the process to setup Pterodactyl integration for WemX
 published: true
-date: 2024-02-01T23:02:53.470Z
+date: 2024-02-01T23:07:08.583Z
 tags: 
 editor: markdown
 dateCreated: 2023-07-09T12:56:38.061Z
@@ -38,6 +38,7 @@ Pterodactyl requires SSL to use the console api, so you also need to edit the We
 
 
 5. Pterodactyl is successfully setup, you can start making new packages. 
+![console.png](/third-party/console.png)
 ## Pterodactyl SSO
 
 No more messing around with passwords and emails. With our SSO package for Pterodactyl, you can allow clients to login to Pterodactyl with just a press of a button. 
