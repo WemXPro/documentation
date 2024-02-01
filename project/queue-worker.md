@@ -2,7 +2,7 @@
 title: Queue Worker
 description: This page goes in depth about the queue worker
 published: true
-date: 2024-02-01T16:48:44.413Z
+date: 2024-02-01T16:50:18.401Z
 tags: 
 editor: markdown
 dateCreated: 2024-02-01T16:48:44.413Z
@@ -24,7 +24,7 @@ Edit file `/var/www/wemx/.env`, update or add `CRON_QUEUE` and set it to `true`
 CRON_QUEUE=true
 ```
 
-If CRON_QUEUE doesn't exists in your .env file, then add it.
+If CRON_QUEUE doesn't exists in your env file that means its already being used as default. You can still add it and set it to true
 
 # Ubuntu Service Queue
 
