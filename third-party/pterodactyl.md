@@ -2,7 +2,7 @@
 title: Pterodactyl
 description: This page documents the process to setup Pterodactyl integration for WemX
 published: true
-date: 2024-02-01T23:11:07.121Z
+date: 2024-02-01T23:15:50.836Z
 tags: 
 editor: markdown
 dateCreated: 2023-07-09T12:56:38.061Z
@@ -34,7 +34,8 @@ nano /etc/pterodactyl/config.yml
 ```
 > Edit the `allowed_origins` field and add your WemX panel domain.
 ![wings-config.png](/third-party/wings-config.png)
-Pterodactyl requires SSL to use the console api, so you also need to edit the WemX panel .env file `nano /var/www/wemx/.env` and add the `FORCE_HTTPS=true` option or edit if it exists.
+
+> Pterodactyl requires SSL to use the console api, so you also need to edit the WemX panel .env file `nano /var/www/wemx/.env` and add the `FORCE_HTTPS=true` option or edit if it exists.{.is-warning}
 
 
 5. Pterodactyl is successfully setup, you can start making new packages. 
