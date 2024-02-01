@@ -2,7 +2,7 @@
 title: Pterodactyl
 description: This page documents the process to setup Pterodactyl integration for WemX
 published: true
-date: 2024-02-01T23:01:08.311Z
+date: 2024-02-01T23:02:53.470Z
 tags: 
 editor: markdown
 dateCreated: 2023-07-09T12:56:38.061Z
@@ -79,7 +79,6 @@ chown -R www-data:www-data /var/www/pterodactyl/*
 
 Head over to your Pterodactyl Configuration located in the Admin area of your application. Paste in your SSO key and save it. (view screenshot below)
 
-![config.png](/assets/third-party/config.png)
 
 > The Pterodactyl SSO composer package is uninstalled from your Pterodactyl Panel when you update Pterodactyl. You must reinstall it again using the composer command above and clear cache.
 {.is-warning}
