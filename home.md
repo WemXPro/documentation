@@ -2,7 +2,7 @@
 title: Introduction
 description: In depth documentation on installing, using and working with WemX.
 published: true
-date: 2023-10-30T15:24:22.090Z
+date: 2024-01-31T14:22:48.061Z
 tags: 
 editor: markdown
 dateCreated: 2023-02-11T01:31:09.200Z
@@ -16,4 +16,4 @@ Additionally, WemX is an ideal base for Software as a Service (SaaS) application
 
 For developers, WemX offers flexibility and extensibility, with a variety of built-in functions and facades for diverse use cases. Payment across any supported gateway is simplified, and transaction completion actions can be customized. WemX serves as a creative canvas, allowing for custom module creation, functionality adjustments, and service integration, going beyond a standard platform.
 
-![WemX](/assets/index.png)
+![checkout-demo.png](/assets/checkout.png)

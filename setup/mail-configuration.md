@@ -2,34 +2,19 @@
 title: Mail Configuration
 description: 
 published: true
-date: 2023-11-07T11:46:51.330Z
+date: 2024-01-24T05:21:52.937Z
 tags: 
 editor: markdown
 dateCreated: 2023-03-09T12:41:18.157Z
 ---
 
-# Using Internal Mailer
-PHP comes with an internal mailer which lets you send emails from the server. It's very easy and quick to set up.
-
-```shell
-cd /var/www/wemx
-php artisan setup:mail
-```
-2. Set driver to "mail", origin to `no-reply@YourDomain.com` and encryption method to TLS
-3. Go to Admin area -> Billing -> Emails -> Click Compose Email; Send yourself a test email, if it arrives, you're done.
-4. If you don't receive the test email in step 3; run the commands below:
-- `sudo apt-get install sendmail`
-- `sudo sendmailconfig`
-- Restart Webserver: `sudo service nginx restart` OR `sudo service apache2 restart` 
-5. Go back to Billing Email settings, are try sending yourself a test mail.
-
-# Using Custom SMTP Server
+# Setting up SMTP
 ```shell
 cd /var/www/wemx
 php artisan setup:mail
 ```
 2. Set Driver to "smtp"
-3. See Information below
+3. See Informaion below
 
 ## Table {.tabset}
 

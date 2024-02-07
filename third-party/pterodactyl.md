@@ -2,7 +2,7 @@
 title: Pterodactyl
 description: This page documents the process to setup Pterodactyl integration for WemX
 published: true
-date: 2023-09-29T19:17:29.212Z
+date: 2024-02-01T23:16:41.193Z
 tags: 
 editor: markdown
 dateCreated: 2023-07-09T12:56:38.061Z
@@ -14,26 +14,33 @@ Pterodactyl® is a free, open-source game server management panel built with PHP
 
 You can use the official built-in Pterodactyl plugin to manage orders. WemX allows customers to setup enviroment variables at checkout, select a server location and more. There is also a SSO feature allowing your users to directly login to Pterodactyl with a single redirect.
 
-https://github.com/WemxPro/service-pterodactyl
-
 ## Configuration
 
 1. Open your Pterodactyl Panel, login as administrator and click on Application API. Click "Create New".
 
 2. Set Read and Write for all fields and for description set "wemx" or any description you want (view screenshot below), hit Create Credentials. 
-
+API key
 ![pterodactyl-config.png](/assets/third-party/pterodactyl-config.png)
+Admin private API key
+![user-api.png](/third-party/user-api.png)
 
 3. On your WemX application, head to the Admin Area select the Pterodactyl dropdown and head over to settings. Paste in your API key and set Pterodactyl URL to your panel url. Make sure the Panel url starts with https:// or http:// and does NOT end with a '/'. Correct format: https://panel.example.com
 
 ![config.png](/assets/third-party/config.png)
 
-4. Create a brand new location, select the location to bind it to on Pterodactyl and save it.
-Note: Make sure the nodes of the selected location have nodes with enough allocations.
+4. In order for the console and other pages to work for the client, you need to configure WING.
+```shell
+nano /etc/pterodactyl/config.yml
+```
+> Edit the `allowed_origins` field and add your WemX panel domain.
+![wings-config.png](/third-party/wings-config.png)
 
-![location.png](/assets/third-party/location.png)
+> Pterodactyl requires SSL to use the console api, so you also need to edit the WemX panel .env file `nano /var/www/wemx/.env` and add the `FORCE_HTTPS=true` option or edit if it exists.{.is-warning}
+
 
 5. Pterodactyl is successfully setup, you can start making new packages. 
+![console.png](/third-party/console.png)
+
 ## Pterodactyl SSO
 
 No more messing around with passwords and emails. With our SSO package for Pterodactyl, you can allow clients to login to Pterodactyl with just a press of a button. 
@@ -75,7 +82,6 @@ chown -R www-data:www-data /var/www/pterodactyl/*
 
 Head over to your Pterodactyl Configuration located in the Admin area of your application. Paste in your SSO key and save it. (view screenshot below)
 
-![config.png](/assets/third-party/config.png)
 
 > The Pterodactyl SSO composer package is uninstalled from your Pterodactyl Panel when you update Pterodactyl. You must reinstall it again using the composer command above and clear cache.
 {.is-warning}

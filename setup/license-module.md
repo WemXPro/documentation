@@ -2,7 +2,7 @@
 title: Licensing Service
 description: This guide explains how the licensing service works
 published: true
-date: 2024-01-03T20:50:21.478Z
+date: 2024-01-05T11:44:26.007Z
 tags: 
 editor: markdown
 dateCreated: 2024-01-01T21:07:56.320Z
@@ -34,6 +34,11 @@ Data
   "packages": "Example" // the name of the package for the license, separate multiple packages with a comma ","
 }
 ```
+
+Optional Data
+- data (array): Pass additional data that's stored in the license
+- transaction_id: Pass a unique transaction id, or external id, if this id already exists the api gives an invalid response
+- due_date: pass a date value to set the due date after the license is created. The date should be in the future, and price should be a be of type "recurring"
 
 Example Response
 ```json
