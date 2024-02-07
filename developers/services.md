@@ -2,7 +2,7 @@
 title: Service Development
 description: This documentation page goes in depth in regarding development of service for WemX
 published: true
-date: 2024-02-07T19:01:17.676Z
+date: 2024-02-07T19:04:06.029Z
 tags: 
 editor: markdown
 dateCreated: 2023-10-23T23:56:59.457Z
@@ -432,10 +432,12 @@ If your service has external objects that are identified by an ID such as a serv
 
 The permissions functions allows you to protect custom routes or pages for your service by checking if a member / subuser has the corressponding permission to perform a certain action or to access a page. For instance, if your service has custom routes defined for clients, the key of the permission is the name of the route.
 
-Take a look at this custom route that allows clients to start their server. It's important that your route(s) contains the `{order}` parameter as shown in the example below
+> Service routes for managing orders are REQUIRED to have the `{order}` parameter. If its not provided, WemX won't do any permission checks!
+{.is-warning}
+
 
 ```php
- Route::get('/start', [Service::class, 'startServer'])->name('proxmox.server.start');
+ Route::get('/proxmox/{order}/action/start', [Service::class, 'startServer'])->name('proxmox.server.start');
 ```
 
 To protect this route with permissions, we can add the code below to Service.php
