@@ -2,7 +2,7 @@
 title: Service Development
 description: This documentation page goes in depth in regarding development of service for WemX
 published: true
-date: 2024-02-07T19:00:10.298Z
+date: 2024-02-07T19:00:56.615Z
 tags: 
 editor: markdown
 dateCreated: 2023-10-23T23:56:59.457Z
@@ -395,7 +395,7 @@ WemX allows you to store external users per user or order.
 ```php
 	$externalUser = $order->getExternalUser();
 ```
-Passwords are encrypted, to decrypt you can use `decrypt($externalUser->password`
+Passwords are encrypted, to decrypt you can use `decrypt($externalUser->password)
 
 ### Check if order has external order
 ```php
