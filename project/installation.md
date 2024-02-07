@@ -156,7 +156,7 @@ chown -R nginx:nginx /var/www/wemx/*
 chown -R apache:apache /var/www/wemx/*
 ```
 
-Remember to also chmod your storage
+Remember to also chmod your storage.
 ```php
 chmod -R /var/www/wemx/storage/* /var/www/wemx/bootstrap/cache/
 ```
