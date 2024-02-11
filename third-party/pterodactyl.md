@@ -2,7 +2,7 @@
 title: Pterodactyl
 description: This page documents the process to setup Pterodactyl integration for WemX
 published: true
-date: 2024-02-01T23:16:41.193Z
+date: 2024-02-11T21:37:20.232Z
 tags: 
 editor: markdown
 dateCreated: 2023-07-09T12:56:38.061Z
@@ -34,9 +34,17 @@ nano /etc/pterodactyl/config.yml
 ```
 > Edit the `allowed_origins` field and add your WemX panel domain.
 ![wings-config.png](/third-party/wings-config.png)
+It is also necessary that port 8080 is open or another port depending on your settings
 
 > Pterodactyl requires SSL to use the console api, so you also need to edit the WemX panel .env file `nano /var/www/wemx/.env` and add the `FORCE_HTTPS=true` option or edit if it exists.{.is-warning}
 
+> If you have any problems with the automatic installation{.is-danger}
+```
+php artisan optimize: clear
+php artisan wemx:update
+php artisan module:publish
+php artisan optimize:clear
+```
 
 5. Pterodactyl is successfully setup, you can start making new packages. 
 ![console.png](/third-party/console.png)
@@ -85,11 +93,6 @@ Head over to your Pterodactyl Configuration located in the Admin area of your ap
 
 > The Pterodactyl SSO composer package is uninstalled from your Pterodactyl Panel when you update Pterodactyl. You must reinstall it again using the composer command above and clear cache.
 {.is-warning}
-
-
-
-
-
 
 
 
