@@ -2,7 +2,7 @@
 title: Pterodactyl
 description: This page documents the process to setup Pterodactyl integration for WemX
 published: true
-date: 2024-02-11T21:37:20.232Z
+date: 2024-02-11T21:39:57.884Z
 tags: 
 editor: markdown
 dateCreated: 2023-07-09T12:56:38.061Z
@@ -40,7 +40,7 @@ It is also necessary that port 8080 is open or another port depending on your se
 
 > If you have any problems with the automatic installation{.is-danger}
 ```
-php artisan optimize: clear
+php artisan optimize:clear
 php artisan wemx:update
 php artisan module:publish
 php artisan optimize:clear
