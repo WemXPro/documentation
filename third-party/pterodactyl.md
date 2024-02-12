@@ -2,7 +2,7 @@
 title: Pterodactyl
 description: This page documents the process to setup Pterodactyl integration for WemX
 published: true
-date: 2024-02-12T18:40:24.082Z
+date: 2024-02-12T18:56:56.733Z
 tags: 
 editor: markdown
 dateCreated: 2023-07-09T12:56:38.061Z
@@ -13,6 +13,8 @@ dateCreated: 2023-07-09T12:56:38.061Z
 Pterodactyl® is a free, open-source game server management panel built with PHP, React, and Go. Designed with security in mind, Pterodactyl runs all game servers in isolated Docker containers while exposing a beautiful and intuitive UI to end users.
 
 You can use the official built-in Pterodactyl plugin to manage orders. WemX allows customers to setup enviroment variables at checkout, select a server location and more. There is also a SSO feature allowing your users to directly login to Pterodactyl with a single redirect.
+
+> If you update the service before this, be sure to enable templates by default{.is-danger}
 
 ## Configuration
 
