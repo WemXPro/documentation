@@ -2,7 +2,7 @@
 title: Service Development
 description: This documentation page goes in depth in regarding development of service for WemX
 published: true
-date: 2024-01-13T00:19:47.650Z
+date: 2024-02-07T19:04:06.029Z
 tags: 
 editor: markdown
 dateCreated: 2023-10-23T23:56:59.457Z
@@ -377,14 +377,67 @@ The upgrade function is optional. If your service does not support upgrading or 
     }
 ```
 
+## External Users (optional)
+
+WemX allows you to store external users per user or order.
+
+### Storing External Users
+```php
+   $order->createExternalUser([
+      'external_id' => 1, // optional
+      'username' => 'myusername22',
+      'password' => 'supersecure',
+      'data' => [], // Additional data about the user as an array (optional)
+   ]);
+```
+
+### Get External User
+```php
+	$externalUser = $order->getExternalUser();
+```
+Passwords are encrypted, to decrypt you can use `decrypt($externalUser->password)`
+
+### Check if order has external order
+```php
+	if($order->hasExternalUser()) {
+		// do something
+	}
+```
+
+### Update External Password
+```php
+	$order->updateExternalPassword('newPassword');
+```
+You may call this method after updating a users password using the API
+
+## External IDs
+
+If your service has external objects that are identified by an ID such as a server, instance, package etc... you may store that in the order to retrieve it when making API calls.
+
+### Storing External ID
+```php
+	$order->setExternalId('1');
+```
+
+### Get External ID
+```php
+	$order->getExternalId();
+  
+  // OR
+  
+  $order->external_id;
+```
+
 ## Permissions (optional)
 
 The permissions functions allows you to protect custom routes or pages for your service by checking if a member / subuser has the corressponding permission to perform a certain action or to access a page. For instance, if your service has custom routes defined for clients, the key of the permission is the name of the route.
 
-Take a look at this custom route that allows clients to start their server. It's important that your route(s) contains the `{order}` parameter as shown in the example below
+> Service routes for managing orders are REQUIRED to have the `{order}` parameter. If its not provided, WemX won't do any permission checks!
+{.is-warning}
+
 
 ```php
- Route::get('/start', [Service::class, 'startServer'])->name('proxmox.server.start');
+ Route::get('/proxmox/{order}/action/start', [Service::class, 'startServer'])->name('proxmox.server.start');
 ```
 
 To protect this route with permissions, we can add the code below to Service.php
