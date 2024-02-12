@@ -2,7 +2,7 @@
 title: Pterodactyl
 description: This page documents the process to setup Pterodactyl integration for WemX
 published: true
-date: 2024-02-11T21:39:57.884Z
+date: 2024-02-12T18:40:24.082Z
 tags: 
 editor: markdown
 dateCreated: 2023-07-09T12:56:38.061Z
@@ -38,7 +38,7 @@ It is also necessary that port 8080 is open or another port depending on your se
 
 > Pterodactyl requires SSL to use the console api, so you also need to edit the WemX panel .env file `nano /var/www/wemx/.env` and add the `FORCE_HTTPS=true` option or edit if it exists.{.is-warning}
 
-> If you have any problems with the automatic installation{.is-danger}
+> If you have any problems with the automatic installation. Remove the service manually app/Services/Pterodactyl after that install the service and run the commands below{.is-danger}
 ```
 php artisan optimize:clear
 php artisan wemx:update
