@@ -19,13 +19,15 @@ Themes allow you to dynamically change the appearance of your panel without affe
 In this example, we will be creating a new client theme called Material 
 
 1. Duplicate the default theme folder `resources/themes/client/tailwind` to `resources/themes/client/material`
-3. Inside the root of the newly created theme folder you will find a file called `theme.php` here you can specify the new name. Make sure to change the name to Material
-4. Duplicate the default Universal Service folder `app/Services/Universal/Resources/views/client/tailwind` to `app/Services/Universal/Resources/views/client/material`
-5. Duplicate the default Pterodactyl Service folder `app/Services/Pterodactyl/Resources/views/client/tailwind` to `app/Services/Pterodactyl/Resources/views/client/material`
-6. Duplicate the default Affiliates module folder `Modules/Affiliates/Resources/views/client/tailwind` to `Modules/Affiliate/Resources/views/client/material`
-7. Duplicate the default Locales module interface folder `Modules/Locales/Resources/views/client/tailwind` to `Modules/Locales/Resources/views/client/material`
-8. Activate the new theme in the Admin Area
-9. You may customize the theme to your preference
+2. Inside the root of the newly created theme folder you will find a file called `theme.php` here you can specify the new name. Make sure to change the name to Material
+3. Duplicate all the default service and module folders, for example
+- app/Services/Universal/Resources/views/client/tailwind `->` app/Services/Universal/Resources/views/client/material
+- Modules/Affiliates/Resources/views/client/tailwind `->` Modules/Affiliates/Resources/views/client/material
+4. Activate the new theme in the Admin Area
+5. You may customize the theme to your preference
+
+> Please make sure all of the service and module folders are duplicated.
+{.is-warning}
 
 ## Editing Client Theme Background Colors
 In this example, we will be changing the background color from gray-900 (#111827) to neutral-900 (#171717)
