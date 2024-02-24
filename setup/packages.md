@@ -2,7 +2,7 @@
 title: Packages
 description: Learn how to properly setup packages
 published: true
-date: 2023-12-22T20:48:20.649Z
+date: 2024-02-24T20:25:09.405Z
 tags: 
 editor: markdown
 dateCreated: 2023-09-30T17:14:56.199Z
@@ -52,11 +52,11 @@ Copy the Webhook URL and create a new webhook
 Set the method to POST, in URL enter your discord webhook URL inside data add:
 ```
 {
-    "content": "$order->user->username just purchased $order->name",
+    "content": "{{ $order->user->username }} just purchased {{ $order->name }}",
     "embeds": [
         {
-            "title": "Order Created: $order->package->name",
-            "description": "$order->user->email just purchased a new server!",
+            "title": "Order Created: {{ $order->package->name }}",
+            "description": "{{ $order->user->email }} just purchased a new server!",
             "color": "7506394"
         }
     ]
