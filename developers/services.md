@@ -2,7 +2,7 @@
 title: Service Development
 description: This documentation page goes in depth in regarding development of service for WemX
 published: true
-date: 2024-02-07T19:04:06.029Z
+date: 2024-03-01T14:20:16.909Z
 tags: 
 editor: markdown
 dateCreated: 2023-10-23T23:56:59.457Z
@@ -374,6 +374,32 @@ The upgrade function is optional. If your service does not support upgrading or 
             'disk_space' => $newPackage->data('disk_space'),
             'cpu_limit' => $newPackage->data('cpu_limit'),
         ]);
+    }
+```
+
+## Automatically Login (optional)
+
+This method allows you to add a function to your service that can be used to automatically login a user into a panel.
+
+If your service has an API route that allows you to generate a set of login tokens you may call that API route and extract the link from there, then redirect the user to that link. 
+
+This function must return a redirect
+
+```php
+    /**
+     * This function is responsible automatically logging in to the
+     * panel when the user clicks the login button in the client area.
+     * 
+     * @return redirect
+    */
+    public function loginToPanel(Order $order)
+    {
+    	try {
+      		$response= Http::post('https://example.com/api/v1/users/1/login-token');
+        	return redirect($response['login_url']);
+      } catch(\Exception $error) {
+	      	return redirect()->back()->withError("Something went wrong, please try again later.");
+			}
     }
 ```
 
