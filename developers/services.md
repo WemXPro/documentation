@@ -2,7 +2,7 @@
 title: Service Development
 description: This documentation page goes in depth in regarding development of service for WemX
 published: true
-date: 2024-03-01T14:20:16.909Z
+date: 2024-03-01T14:25:40.222Z
 tags: 
 editor: markdown
 dateCreated: 2023-10-23T23:56:59.457Z
@@ -585,6 +585,17 @@ This method is called right when a user attempts to checkout and can be useful t
         if($response->failed()) {
 						throw new \Exception('Could not find a suitable node to deploy your server on');
 				}
+    }
+```
+
+## Event On Load Package
+
+This method is called right when a user attempts to checkout and can be useful to throw exceptions.
+
+```php
+    public function eventLoadPackage(Package $package): void
+    {
+        // The method is called when the user navigates to the package view page
     }
 ```
 
