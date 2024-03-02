@@ -2,7 +2,7 @@
 title: Getting Started Developers
 description: This guide goes in depth about best practices for new developers getting started with WemX
 published: true
-date: 2024-03-02T21:47:58.345Z
+date: 2024-03-02T21:48:58.948Z
 tags: 
 editor: markdown
 dateCreated: 2024-03-02T20:50:28.056Z
@@ -184,6 +184,8 @@ class Calculator
     {
         $this->result -= $value;
     }
+    
+    // you could add more functions to multiple, subtract, etc...
     
      public function getResult()
     {
