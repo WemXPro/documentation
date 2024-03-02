@@ -2,7 +2,7 @@
 title: Getting Started Developers
 description: This guide goes in depth about best practices for new developers getting started with WemX
 published: true
-date: 2024-03-02T21:48:58.948Z
+date: 2024-03-02T21:49:35.261Z
 tags: 
 editor: markdown
 dateCreated: 2024-03-02T20:50:28.056Z
