@@ -2,7 +2,7 @@
 title: Creating a Client Theme
 description: This is a tutorial on how to create a Client Theme
 published: true
-date: 2023-10-27T19:05:33.587Z
+date: 2024-03-06T16:04:22.523Z
 tags: 
 editor: markdown
 dateCreated: 2023-02-16T04:24:41.236Z
@@ -20,9 +20,9 @@ In this example, we will be creating a new client theme called Material
 
 1. Duplicate the default theme folder `resources/themes/client/tailwind` to `resources/themes/client/material`
 2. Inside the root of the newly created theme folder you will find a file called `theme.php` here you can specify the new name. Make sure to change the name to Material
-3. Duplicate all the default service and module folders, for example
-- app/Services/Universal/Resources/views/client/tailwind `->` app/Services/Universal/Resources/views/client/material
-- Modules/Affiliates/Resources/views/client/tailwind `->` Modules/Affiliates/Resources/views/client/material
+3. Duplicate all the default service and module folders, **for example**
+- `app/Services/Universal/Resources/views/client/tailwind` -> `app/Services/Universal/Resources/views/client/material`
+- `Modules/Affiliates/Resources/views/client/tailwind` -> `Modules/Affiliates/Resources/views/client/material`
 4. Activate the new theme in the Admin Area
 5. You may customize the theme to your preference
 
