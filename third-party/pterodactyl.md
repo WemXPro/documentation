@@ -2,7 +2,7 @@
 title: Pterodactyl
 description: This page documents the process to setup Pterodactyl integration for WemX
 published: true
-date: 2024-02-12T18:56:56.733Z
+date: 2024-05-15T11:54:51.449Z
 tags: 
 editor: markdown
 dateCreated: 2023-07-09T12:56:38.061Z
@@ -30,11 +30,17 @@ Admin private API key
 
 ![config.png](/assets/third-party/config.png)
 
-4. In order for the console and other pages to work for the client, you need to configure WING.
+4. In order for the console and other pages to work for the client, you need to configure Wings.
+
+> **You must do this step for all your wings instances**
+{.is-warning}
+
+
 ```shell
 nano /etc/pterodactyl/config.yml
 ```
 > Edit the `allowed_origins` field and add your WemX panel domain.
+> **Make sure you enter your actual domain where you have WemX installed**
 ![wings-config.png](/third-party/wings-config.png)
 It is also necessary that port 8080 is open or another port depending on your settings
 
