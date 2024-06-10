@@ -698,7 +698,26 @@ The select type required the parameter "options"
             ]
 ```
 
-To allow multiple values to be selected, you can add `"multiple" => true,`
+To allow multiple values to be selected, you can add `"multiple" => true,` You also need to add `[]` after the key. 
+
+```php
+            [
+                "key" => "country[]",
+                "name" => "Country ",
+                "description" => "Which country are you located in?",
+                "type" => "select",
+                "options" => [
+                    "US" => "United States",
+                    "CA" => "Canada",
+                    "DE" => "Germany",
+                ],
+                "default_value" => "CA",
+                "rules" => ['required'],
+            ]
+```
+
+To retrieve it now you need to use this:
+`$country's= $package->data('country', []);`
 
 ### Bool
 
