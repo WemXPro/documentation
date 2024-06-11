@@ -2,7 +2,7 @@
 title: Installation
 description: This page goes in depth on the installation process
 published: true
-date: 2023-12-12T21:05:21.020Z
+date: 2024-06-11T08:46:23.584Z
 tags: 
 editor: markdown
 dateCreated: 2023-07-08T10:03:10.397Z
@@ -79,6 +79,9 @@ cd wemx
 ## Download WemX using installer
 At this point we have created a brand new Laravel project, now we will be installing WemX.
 ```shell
+# Lets remove the default migrations by laravel
+rm database/migrations/* -r
+
 # Download the WemX Installer using composer
 composer require wemx/installer dev-web
 
