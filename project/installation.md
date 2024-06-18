@@ -2,7 +2,7 @@
 title: Installation
 description: This page goes in depth on the installation process
 published: true
-date: 2024-06-11T08:46:23.584Z
+date: 2024-06-18T15:27:38.656Z
 tags: 
 editor: markdown
 dateCreated: 2023-07-08T10:03:10.397Z
@@ -15,7 +15,7 @@ WemX is built on top of the Laravel framework an can be installed almost anywher
 > WemX provides hosted plans that are deployed instantly on our systems with full file and database access. This services is specifically meant for those that do not have in depth understanding of Linux.
 {.is-info}
 
-### YouTube Video 
+
 
 # Dependencies
 
