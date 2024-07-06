@@ -2,14 +2,14 @@
 title: Webserver Configuration
 description: 
 published: true
-date: 2023-10-30T14:43:00.047Z
+date: 2024-07-06T10:43:53.790Z
 tags: 
 editor: markdown
 dateCreated: 2023-07-08T13:58:20.839Z
 ---
 
 # Webserver
-Webservers are respobsible for returning content whenever a user makes a request to your website. To use WemX you need to choose which webserver you are going to use. 
+Webservers are responsible for returning content whenever a user makes a request to your website. To use WemX you need to choose which webserver you are going to use. 
 
 # Nginx {.tabset}
 ## Nginx without SSL
