@@ -2,7 +2,7 @@
 title: Webserver Configuration
 description: 
 published: true
-date: 2024-07-06T10:43:53.790Z
+date: 2024-10-05T13:53:39.358Z
 tags: 
 editor: markdown
 dateCreated: 2023-07-08T13:58:20.839Z
@@ -54,7 +54,7 @@ server {
 
     location ~ \.php$ {
         fastcgi_split_path_info ^(.+\.php)(/.+)$;
-        fastcgi_pass unix:/run/php/php8.1-fpm.sock;
+        fastcgi_pass unix:/run/php/php8.3-fpm.sock;
         fastcgi_index index.php;
         include fastcgi_params;
         fastcgi_param PHP_VALUE "upload_max_filesize = 100M \n post_max_size=100M";
@@ -84,7 +84,7 @@ sudo ln -s /etc/nginx/sites-available/wemx.conf /etc/nginx/sites-enabled/wemx.co
 sudo systemctl restart nginx
 ```
 
-> If your domains keeps redirecting you or does not show the proper website, check your php version with command `php -v` and update value on line 30 from 8.1 to your php version and restart nginx
+> If your domains keeps redirecting you or does not show the proper website, check your php version with command `php -v` and update value on line 30 from 8.3 to your php version and restart nginx
 {.is-warning}
 
 ## Nginx with SSL
@@ -145,7 +145,7 @@ server {
 
     location ~ \.php$ {
         fastcgi_split_path_info ^(.+\.php)(/.+)$;
-        fastcgi_pass unix:/run/php/php8.1-fpm.sock;
+        fastcgi_pass unix:/run/php/php8.3-fpm.sock;
         fastcgi_index index.php;
         include fastcgi_params;
         fastcgi_param PHP_VALUE "upload_max_filesize = 100M \n post_max_size=100M";
