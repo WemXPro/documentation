@@ -2,7 +2,7 @@
 title: Installation
 description: This page goes in depth on the installation process
 published: true
-date: 2024-06-18T15:27:38.656Z
+date: 2024-10-05T13:52:38.279Z
 tags: 
 editor: markdown
 dateCreated: 2023-07-08T10:03:10.397Z
@@ -19,7 +19,7 @@ WemX is built on top of the Laravel framework an can be installed almost anywher
 
 # Dependencies
 
-- PHP `8.1` or above with the following extensions: cli, openssl, gd, mysql, PDO, mbstring, tokenizer, bcmath, xml or dom, curl, zip
+- PHP `8.3` or above with the following extensions: cli, openssl, gd, mysql, PDO, mbstring, tokenizer, bcmath, xml or dom, curl, zip
 - MySQL `5.7.22` and higher (MySQL 8 recommended) or MariaDB `10.2` and higher.
 - A webserver (Apache, NGINX, Caddy, etc.)
 - `curl`
@@ -51,7 +51,7 @@ apt update
 apt-add-repository universe
 
 # Install Dependencies
-apt -y install php8.1 php8.1-{common,cli,gd,mysql,mbstring,bcmath,xml,fpm,curl,zip} mariadb-server nginx tar unzip git
+apt -y install php8.3 php8.3-{common,cli,gd,mysql,mbstring,bcmath,xml,fpm,curl,zip} mariadb-server nginx tar unzip git
 ```
 
 ## Installing composer
