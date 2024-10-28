@@ -2,7 +2,7 @@
 title: Queue Worker
 description: This page goes in depth about the queue worker
 published: true
-date: 2024-02-01T16:57:20.703Z
+date: 2024-10-28T21:17:40.749Z
 tags: 
 editor: markdown
 dateCreated: 2024-02-01T16:48:44.413Z
@@ -60,7 +60,7 @@ Description=WemX Queue Worker
 User=root
 Group=www-data
 Restart=always
-ExecStart=/usr/bin/php /var/www/wemx/artisan queue:work --sleep=3 --tries=3
+ExecStart=/usr/bin/php /var/www/wemx/artisan queue:work --sleep=3 --tries=3 --stop-when-empty
 StartLimitInterval=180
 StartLimitBurst=30
 RestartSec=5s
