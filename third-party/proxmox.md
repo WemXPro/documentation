@@ -51,3 +51,5 @@ In order to setup the Proxmox service correctly on WemX, you need to create an A
 4. Open WemX and locate the configuration for Proxmox, fill in the token ID and token secret and the Proxmox URL. Save the configuration and click on "Test connection" to verify everything is working.
 
 ![proxmox_wemx_config.png](/assets/proxmox_wemx_config.png)
+
+Here you can find a guide on manually adding VMs to orders in your Proxmox service: [Proxmox Manual VM Guide](https://www.youtube.com/watch?v=tg0bXrOjCBg)
