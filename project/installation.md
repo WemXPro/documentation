@@ -2,7 +2,7 @@
 title: Installation
 description: This page goes in depth on the installation process
 published: true
-date: 2024-10-05T13:52:38.279Z
+date: 2024-12-10T18:37:10.578Z
 tags: 
 editor: markdown
 dateCreated: 2023-07-08T10:03:10.397Z
@@ -20,7 +20,7 @@ WemX is built on top of the Laravel framework an can be installed almost anywher
 # Dependencies
 
 - PHP `8.3` or above with the following extensions: cli, openssl, gd, mysql, PDO, mbstring, tokenizer, bcmath, xml or dom, curl, zip
-- MySQL `5.7.22` and higher (MySQL 8 recommended) or MariaDB `10.2` and higher.
+- MariaDB `11` and higher
 - A webserver (Apache, NGINX, Caddy, etc.)
 - `curl`
 - `zip` and `unzip`
