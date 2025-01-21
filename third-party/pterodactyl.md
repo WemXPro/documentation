@@ -2,7 +2,7 @@
 title: Pterodactyl
 description: This page documents the process to setup Pterodactyl integration for WemX
 published: true
-date: 2025-01-21T17:41:50.945Z
+date: 2025-01-21T17:42:06.526Z
 tags: 
 editor: markdown
 dateCreated: 2023-07-09T12:56:38.061Z
