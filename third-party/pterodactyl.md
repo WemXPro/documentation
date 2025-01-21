@@ -2,7 +2,7 @@
 title: Pterodactyl
 description: This page documents the process to setup Pterodactyl integration for WemX
 published: true
-date: 2025-01-21T17:41:35.004Z
+date: 2025-01-21T17:41:50.945Z
 tags: 
 editor: markdown
 dateCreated: 2023-07-09T12:56:38.061Z
@@ -47,6 +47,7 @@ It is also necessary that port 8080 is open or another port depending on your se
 > Be sure to restart Wings after making changes to config.yml.{.is-danger}
 ```shell
 service wings restart
+# or
 sudo systemctl restart wings
 ```
 
