@@ -2,7 +2,7 @@
 title: Pterodactyl
 description: This page documents the process to setup Pterodactyl integration for WemX
 published: true
-date: 2024-05-15T11:54:51.449Z
+date: 2025-01-21T17:41:35.004Z
 tags: 
 editor: markdown
 dateCreated: 2023-07-09T12:56:38.061Z
@@ -43,6 +43,12 @@ nano /etc/pterodactyl/config.yml
 > **Make sure you enter your actual domain where you have WemX installed**
 ![wings-config.png](/third-party/wings-config.png)
 It is also necessary that port 8080 is open or another port depending on your settings
+
+> Be sure to restart Wings after making changes to config.yml.{.is-danger}
+```shell
+service wings restart
+sudo systemctl restart wings
+```
 
 > Pterodactyl requires SSL to use the console api, so you also need to edit the WemX panel .env file `nano /var/www/wemx/.env` and add the `FORCE_HTTPS=true` option or edit if it exists.{.is-warning}
 
