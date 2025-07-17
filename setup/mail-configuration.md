@@ -15,11 +15,11 @@ php artisan setup:mail
 ```
 2. Set Driver to "smtp"
 3. See Informaion below
+- Please note: When setting up your email, your password can only contain letters and numbers. Emails may not send if you use symbols or special characters in your password.-
 
 ## Table {.tabset}
 
 ### Gmail
-- Please note: When setting up your email, your password can only contain letters and numbers. Emails may not send if you use symbols or special characters in your password.-
 - Please note that you can only send emails using the gmail address, not any other address!
 - The username is your Gmail address
 - The password is your Gmail Application Specific Password
