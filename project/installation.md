@@ -12,7 +12,7 @@ dateCreated: 2023-07-08T10:03:10.397Z
 
 WemX is built on top of the Laravel framework an can be installed almost anywhere. This page documents the installation process for Ubuntu. You are expected to carefully read our documentation to ensure everything is setup correctly. You are expected to have basic knowledge of Linux, if you do not consider using one of our hosted plans(soon).
 
-> WemX provides hosted plans that are deployed instantly on our systems with full file and database access. This services is specifically meant for those that do not have in depth understanding of Linux.
+> Swift Peak Hosting provides fully managed WemX hosting services. [Learn more](https://wemx.swiftpeakhosting.com/WeMXVPSPlans)
 {.is-info}
 
 
