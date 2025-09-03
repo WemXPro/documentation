@@ -57,6 +57,7 @@ In order to setup the Proxmox service correctly on WemX, you need to create an A
 ...
 
 
+Here you can find a guide on manually adding VMs to orders in your Proxmox service: [Proxmox Manual VM Guide](https://youtu.be/tg0bXrOjCBg)
 ...
 
 
@@ -80,4 +81,3 @@ In order to setup the Proxmox service correctly on WemX, you need to create an A
 
 
 
-Here you can find a guide on manually adding VMs to orders in your Proxmox service: [Proxmox Manual VM Guide](https://youtu.be/tg0bXrOjCBg)
