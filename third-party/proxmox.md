@@ -52,4 +52,32 @@ In order to setup the Proxmox service correctly on WemX, you need to create an A
 
 ![proxmox_wemx_config.png](/assets/proxmox_wemx_config.png)
 
+
+
+...
+
+
+...
+
+
+...
+
+
+4. Update: Proxmox Service Configuration and Information -
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 Here you can find a guide on manually adding VMs to orders in your Proxmox service: [Proxmox Manual VM Guide](https://youtu.be/tg0bXrOjCBg)
